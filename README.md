@@ -21,13 +21,9 @@ To run locally without Docker, simply open the `index.html` file in your browser
 
 ```bash
 docker-compose build
-
 2️⃣ Start the container:
-
 docker-compose up
-
 3️⃣ Open your browser and visit:
-
 http://localhost:8080
 
 🗂 Project Structure
@@ -54,8 +50,10 @@ Nginx
 📬 Contact
 
 ✉️ Email: [your email]
-🌐 Website: [your website if any]
+🌐 Website: [your website any]
 💼 LinkedIn: [your LinkedIn link]
+
+Thank you checking out my portfolio ✨
 
 --------------------------------------------------
 
@@ -66,7 +64,7 @@ Nginx
 ```bash
 touch README.md
 
-2️⃣ Edit it in your editor and paste the content.
+2️⃣ Edit your editor and paste the content.
 
 3️⃣ Commit and push:
 
@@ -74,4 +72,5 @@ git add README.md
 git commit -m "Add English README"
 git push
 
-Thank you for checking out my portfolio! 🙏✨
+
+Thank you checking out my portfolio ✨
