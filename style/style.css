@@ -335,3 +335,39 @@ body {
     text-align: center;
   }
 }
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #081b29; /* warna background nav */
+    position: absolute;
+    top: 60px; /* atur sesuai header */
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-links ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}

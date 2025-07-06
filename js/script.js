@@ -236,3 +236,6 @@ function speak(text) {
     alert("Text-to-Speech not supported in this browser.");
   }
 }
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('active');
+}
