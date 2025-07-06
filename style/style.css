@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  background-color: #000000;
   color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
@@ -11,7 +11,7 @@ body {
 }
 
 .section-title span {
-  color: #ffffff;
+  color: #0b172a;
   user-select: none;
 }
 
@@ -20,7 +20,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
   text-align: center;
-  color: #E5E7EB;
+  color: #000000;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -43,7 +43,7 @@ body {
   overflow: hidden;
   margin: 10px;
   border-radius: 12px;
-  background-color: rgba(9, 17, 44, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .skill-item.show {
@@ -62,7 +62,7 @@ body {
   bottom: -2rem;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(30, 41, 59, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   padding: 4px 10px;
   border-radius: 6px;
   color: white;
@@ -199,7 +199,7 @@ body {
   display: none;
   position: fixed;
   inset: 0;
-  background-color: rgba(14, 34, 69, 0.85);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 9999;
   justify-content: center;
   align-items: center;
@@ -222,7 +222,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: rgb(137, 138, 139);
+  color: rgb(120, 116, 116);
   cursor: pointer;
   z-index: 10000;
   user-select: none;
@@ -340,3 +340,15 @@ nav ul li a:hover {
     font-size: 12px;
   }
 }
+.bg-js { background-color: #ffffff !important; }    /* JavaScript kuning */
+.bg-html { background-color: #ffffff !important; }  /* HTML oranye */
+.bg-css { background-color: #ffffff !important; }   /* CSS biru */
+.bg-php { background-color: #ffffff !important; }   /* PHP abu-ungu */
+.bg-python { background-color: #ffffff !important; } /* Python biru */
+.bg-java { background-color: #ffffff !important; }  /* Java coklat */
+.bg-cpp { background-color: #ffffff !important; }   /* C++ biru */
+.bg-androids { background-color: #ffffff !important; }    /* JavaScript kuning */
+.bg-vscode { background-color: #ffffff !important; }  /* HTML oranye */
+.bg-laravel { background-color: #ffffff !important; }   /* CSS biru */
+.bg-sql { background-color: #ffffff !important; }   /* PHP abu-ungu */
+.bg-github { background-color: #ffffff !important; } /* Python biru */
