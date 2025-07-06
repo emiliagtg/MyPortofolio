@@ -4,6 +4,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
+
 .section-title {
   text-align: center;
   color: #ffffff;
@@ -19,8 +20,7 @@ body {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
   text-align: center;
-  color: #E5E7EB; 
- 
+  color: #E5E7EB;
   max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -73,7 +73,6 @@ body {
   opacity: 1;
 }
 
-/* existing .skill-icon rule - KEEP IT AS IS */
 .skill-icon {
   width: 80px;
   height: 80px;
@@ -90,20 +89,9 @@ body {
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-  #skills-grid { 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .skill-icon {
-    width: 48px;
-    height: 48px;
-  }
-}
-
 .cert-img {
-    max-height: 150px;
-  }
-
+  max-height: 150px;
+}
 
 .scroll-reveal {
   opacity: 0;
@@ -175,15 +163,15 @@ body {
   font-size: 18px;
   cursor: pointer;
   z-index: 50;
-  background-color: rgba(255, 255, 255, 0.5); 
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
 }
 
-/* Certification overlay with eye icon */
 .cert-wrapper {
   position: relative;
   display: inline-block;
 }
+
 .cert-overlay {
   position: absolute;
   top: 0;
@@ -198,20 +186,19 @@ body {
   transition: opacity 0.3s ease;
   cursor: pointer;
 }
+
 .cert-wrapper:hover .cert-overlay {
   opacity: 1;
 }
 
-/* Certification Modal */
 #certModal {
+  display: none;
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 9999;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -226,7 +213,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Panah navigasi */
 #certModal .modal-nav {
   font-size: 2rem;
   position: absolute;
@@ -247,7 +233,6 @@ body {
   right: 30px;
 }
 
-/* Tombol close */
 #certModal .modal-close {
   font-size: 1rem;
   padding: 6px 16px;
@@ -258,26 +243,7 @@ body {
   margin-top: 1rem;
   z-index: 10000;
 }
-#prevCertBtn {
-  left: 30px;
-}
-#nextCertBtn {
-  right: 30px;
-}
-#certModal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
-#certModal.show {
-  display: flex;
-}
 /* Toast Animations */
 #toast.show {
   display: block;
@@ -289,6 +255,7 @@ body {
   10%, 90% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(20px); }
 }
+
 #modalProjectImg {
   transition: transform 0.3s ease;
 }
@@ -296,6 +263,7 @@ body {
 #projectModal.show #modalProjectImg {
   transform: scale(1.02);
 }
+
 #star-canvas {
   position: fixed;
   top: 0;
@@ -303,54 +271,20 @@ body {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: rgb(123, 121, 121); 
-}
-.skill-item {
-  position: relative;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  cursor: pointer;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  margin: 10px;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background: rgb(0, 0, 0);
 }
 
-.skill-item.show {
-  opacity: 1;
-  transform: scale(1);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .skill-icon {
+    width: 48px;
+    height: 48px;
+  }
 }
 
-.skill-item.active {
-  transform: scale(1.1);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
-}
-
-.skill-item::after {
-  content: attr(data-skill);
-  position: absolute;
-  bottom: -2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(30, 41, 59, 0.9);
-  padding: 4px 10px;
-  border-radius: 6px;
-  color: white;
-  font-size: 0.8rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-
-.skill-item.active::after {
-  opacity: 1;
-}
 @media (max-width: 640px) {
   #ai-avatar-assistant {
     right: 1rem !important;

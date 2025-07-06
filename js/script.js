@@ -1,5 +1,5 @@
 // ------------------------
-// CERTIFICATE MODAL FIXED
+// CERTIFICATE MODAL
 // ------------------------
 document.addEventListener('DOMContentLoaded', () => {
   const certImages = document.querySelectorAll('.cert-img');
@@ -9,11 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevCertBtn = document.getElementById('prevCertBtn');
   const nextCertBtn = document.getElementById('nextCertBtn');
   const closeCertModal = document.getElementById('closeCertModal');
+
   let currentCertIndex = 0;
+
+  function updateCertModal() {
+    certModalImg.src = certImages[currentCertIndex].src;
+  }
 
   function showModalCert(index) {
     currentCertIndex = index;
-    certModalImg.src = certImages[currentCertIndex].src;
+    updateCertModal();
     certModal.classList.add('show');
   }
 
@@ -23,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function nextCert() {
     currentCertIndex = (currentCertIndex + 1) % certImages.length;
-    certModalImg.src = certImages[currentCertIndex].src;
+    updateCertModal();
   }
 
   function prevCert() {
     currentCertIndex = (currentCertIndex - 1 + certImages.length) % certImages.length;
-    certModalImg.src = certImages[currentCertIndex].src;
+    updateCertModal();
   }
 
   certImages.forEach((img, index) => {
@@ -53,47 +58,54 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------
-  // ANIMATION on scroll + cert-slider
+  // AUTO SLIDER CERT CARD
   // ------------------------
-  const certs = document.querySelectorAll('.cert-card');
+  const certCards = document.querySelectorAll('.cert-card');
   let currentCert = 0;
 
-  function showNextCert() {
-    certs.forEach((cert, i) => {
+  function showNextCertCard() {
+    certCards.forEach((cert) => {
       cert.classList.remove('active');
       cert.style.display = 'none';
     });
-    if (certs.length > 0) {
-      certs[currentCert].classList.add('active');
-      certs[currentCert].style.display = 'block';
-      currentCert = (currentCert + 1) % certs.length;
+    if (certCards.length > 0) {
+      certCards[currentCert].classList.add('active');
+      certCards[currentCert].style.display = 'block';
+      currentCert = (currentCert + 1) % certCards.length;
     }
   }
 
-  showNextCert();
-  setInterval(showNextCert, 3000);
+  if (certCards.length > 0) {
+    showNextCertCard();
+    setInterval(showNextCertCard, 3000);
+  }
 
-  const items = document.querySelectorAll('.skill-icon, .cert-card');
-  const observer = new IntersectionObserver(entries => {
+  // ------------------------
+  // SCROLL ANIMATIONS
+  // ------------------------
+  const observerOptions = { threshold: 0.1 };
+
+  const activeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
       }
     });
-  }, { threshold: 0.1 });
+  }, observerOptions);
 
-  items.forEach(item => observer.observe(item));
-
-  const revealItems = document.querySelectorAll('.scroll-reveal, .skill-icon');
-  const revealObserver = new IntersectionObserver(entries => {
+  const showObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
       }
     });
-  }, { threshold: 0.1 });
+  }, observerOptions);
 
-  revealItems.forEach(item => revealObserver.observe(item));
+  const activeItems = document.querySelectorAll('.skill-icon, .cert-card');
+  activeItems.forEach(item => activeObserver.observe(item));
+
+  const revealItems = document.querySelectorAll('.scroll-reveal, .skill-icon');
+  revealItems.forEach(item => showObserver.observe(item));
 
   // ------------------------
   // TYPING TEXT EFFECT
@@ -104,24 +116,24 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const typedText = document.getElementById("typed-text");
-  let index = 0;
+  let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
 
   function typeEffect() {
-    const current = phrases[index];
+    const currentPhrase = phrases[phraseIndex];
 
     if (isDeleting) {
-      typedText.textContent = current.substring(0, charIndex--);
+      typedText.textContent = currentPhrase.substring(0, charIndex--);
     } else {
-      typedText.textContent = current.substring(0, charIndex++);
+      typedText.textContent = currentPhrase.substring(0, charIndex++);
     }
 
-    if (!isDeleting && charIndex === current.length) {
+    if (!isDeleting && charIndex === currentPhrase.length) {
       setTimeout(() => isDeleting = true, 2000);
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
-      index = (index + 1) % phrases.length;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
     }
 
     const speed = isDeleting ? 40 : 100;
@@ -154,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------
   // CONTACT FORM WITH EMAILJS + TOAST
   // ------------------------
-  emailjs.init("0mqWwG4ZnyNkJFqOc"); 
+  emailjs.init("0mqWwG4ZnyNkJFqOc");
 
   const form = document.querySelector("form");
   if (form) {
@@ -172,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       emailjs.sendForm("service_2d9ue3k", "template_fjizopm", this)
         .then(() => {
           showToast("✅ Message sent successfully!");
-          e.target.reset();
+          this.reset();
         })
         .catch((error) => {
           console.error(error);
@@ -190,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------
-  // SKILL ITEM ANIMASI KLIK
+  // SKILL ITEM ANIMATION
   // ------------------------
   const skillItems = document.querySelectorAll(".skill-item");
 
@@ -206,9 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.add("active");
     });
   });
-
-  
-    });
+});
 
 // ------------------------
 // SPEECH FUNCTION
@@ -219,8 +229,8 @@ function speak(text) {
     speech.lang = "en-US";
     speech.pitch = 1;
     speech.rate = 1;
-    speech.volume = 5;
-    window.speechSynthesis.cancel(); // Hentikan suara lain sebelum bicara
+    speech.volume = 1;
+    window.speechSynthesis.cancel();
     window.speechSynthesis.speak(speech);
   } else {
     alert("Text-to-Speech not supported in this browser.");
