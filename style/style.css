@@ -112,7 +112,9 @@ body {
   font-weight: 500;
   color: #29384a;
   min-height: 40px;
+  font-size: 14px; 
 }
+
 
 #projectModal {
   display: none;
