@@ -40,7 +40,7 @@ body {
   overflow: hidden;
   margin: 10px;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(9, 17, 44, 0.05);
 }
 
 .skill-item.show {
@@ -112,9 +112,8 @@ body {
   font-weight: 500;
   color: #29384a;
   min-height: 40px;
-  font-size: 14px; 
+  font-size: 18px;
 }
-
 
 #projectModal {
   display: none;
@@ -246,7 +245,6 @@ body {
   z-index: 10000;
 }
 
-/* Toast Animations */
 #toast.show {
   display: block;
   animation: fadeInOut 3s ease forwards;
@@ -276,7 +274,6 @@ body {
   background: rgb(0, 0, 0);
 }
 
-/* Navbar adjustments */
 nav ul {
   display: flex;
   justify-content: flex-end;
@@ -289,7 +286,7 @@ nav ul {
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 14px; /* perkecil supaya muat */
+  font-size: 14px;
 }
 
 nav ul li a:hover {
@@ -297,25 +294,23 @@ nav ul li a:hover {
 }
 
 .menu-btn {
-  display: none; /* hilangkan menu hamburger */
+  display: none;
 }
 
 .nav-links {
-  display: flex !important; /* selalu tampil flex */
+  display: flex !important;
 }
 
-/* Header text adjustments */
 .home-content h3 {
-  font-size: 16px; /* perkecil tulisan "I am an Information Technology Student" */
+  font-size: 16px;
   text-align: center;
 }
 
 .home-content h1 {
-  font-size: 24px; /* judul "Hello, It's Me Emilia" */
+  font-size: 24px;
   text-align: center;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   #skills-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -339,6 +334,6 @@ nav ul li a:hover {
   }
 
   nav ul li a {
-    font-size: 12px; /* lebih kecil di hp */
+    font-size: 12px;
   }
 }
