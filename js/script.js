@@ -1,22 +1,28 @@
-// ------------------------
-// CERTIFICATE MODAL
-// ------------------------
 document.addEventListener('DOMContentLoaded', () => {
-  const certImages = document.querySelectorAll('.cert-img');
-  const certEyes = document.querySelectorAll('.cert-eye');
+  // ------------------------
+  // CERTIFICATE MODAL (POPUP)
+  // ------------------------
+  const certImages = [
+    'img/certificate_dicoding_java.jpeg',
+    'img/dicertificate_dicoding_AIPraktis.jpg',
+    'img/certificate_digitalent_AIBeginner.jpg',
+    'img/certificate_digitalent_AI Intermediate.jpg',
+    'img/certificate_digitalent.jpg',
+    'img/certificate_digitalent_micro.jpeg'
+  ];
+
   const certModal = document.getElementById('certModal');
-  const certModalImg = document.getElementById('certModalImg');
+  const certModalImg = document.getElementById('modalCertImg');
   const prevCertBtn = document.getElementById('prevCertBtn');
   const nextCertBtn = document.getElementById('nextCertBtn');
   const closeCertModal = document.getElementById('closeCertModal');
-
   let currentCertIndex = 0;
 
   function updateCertModal() {
-    certModalImg.src = certImages[currentCertIndex].src;
+    certModalImg.src = certImages[currentCertIndex];
   }
 
-  function showModalCert(index) {
+  function openCertModal(index) {
     currentCertIndex = index;
     updateCertModal();
     certModal.classList.add('show');
@@ -36,49 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCertModal();
   }
 
-  certImages.forEach((img, index) => {
-    img.addEventListener('click', () => showModalCert(index));
-  });
+  window.openCertModal = openCertModal;
 
-  certEyes.forEach((eye, index) => {
-    eye.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showModalCert(index);
-    });
-  });
-
-  nextCertBtn.addEventListener('click', nextCert);
-  prevCertBtn.addEventListener('click', prevCert);
-  closeCertModal.addEventListener('click', closeModalCert);
-
-  certModal.addEventListener('click', (e) => {
-    if (e.target === certModal) {
-      closeModalCert();
-    }
-  });
-
-  // ------------------------
-  // AUTO SLIDER CERT CARD
-  // ------------------------
-  const certCards = document.querySelectorAll('.cert-card');
-  let currentCert = 0;
-
-  function showNextCertCard() {
-    certCards.forEach((cert) => {
-      cert.classList.remove('active');
-      cert.style.display = 'none';
-    });
-    if (certCards.length > 0) {
-      certCards[currentCert].classList.add('active');
-      certCards[currentCert].style.display = 'block';
-      currentCert = (currentCert + 1) % certCards.length;
-    }
+  if (nextCertBtn && prevCertBtn && closeCertModal) {
+    nextCertBtn.addEventListener('click', nextCert);
+    prevCertBtn.addEventListener('click', prevCert);
+    closeCertModal.addEventListener('click', closeModalCert);
   }
 
-  if (certCards.length > 0) {
-    showNextCertCard();
-    setInterval(showNextCertCard, 3000);
-  }
+  certModal?.addEventListener('click', (e) => {
+    if (e.target === certModal) closeModalCert();
+  });
 
   // ------------------------
   // SCROLL ANIMATIONS
@@ -101,11 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
-  const activeItems = document.querySelectorAll('.skill-icon, .cert-card');
-  activeItems.forEach(item => activeObserver.observe(item));
+  document.querySelectorAll('.skill-icon').forEach(item => {
+    activeObserver.observe(item);
+  });
 
-  const revealItems = document.querySelectorAll('.scroll-reveal, .skill-icon');
-  revealItems.forEach(item => showObserver.observe(item));
+  document.querySelectorAll('.scroll-reveal, .skill-icon').forEach(item => {
+    showObserver.observe(item);
+  });
 
   // ------------------------
   // TYPING TEXT EFFECT
@@ -116,31 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const typedText = document.getElementById("typed-text");
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+  let phraseIndex = 0, charIndex = 0, isDeleting = false;
 
   function typeEffect() {
-    const currentPhrase = phrases[phraseIndex];
+    const current = phrases[phraseIndex];
+    typedText.textContent = isDeleting
+      ? current.substring(0, charIndex--)
+      : current.substring(0, charIndex++);
 
-    if (isDeleting) {
-      typedText.textContent = currentPhrase.substring(0, charIndex--);
-    } else {
-      typedText.textContent = currentPhrase.substring(0, charIndex++);
-    }
-
-    if (!isDeleting && charIndex === currentPhrase.length) {
+    if (!isDeleting && charIndex === current.length) {
       setTimeout(() => isDeleting = true, 2000);
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % phrases.length;
     }
 
-    const speed = isDeleting ? 40 : 100;
-    setTimeout(typeEffect, speed);
+    setTimeout(typeEffect, isDeleting ? 40 : 100);
   }
 
-  typeEffect();
+  if (typedText) typeEffect();
 
   // ------------------------
   // SCROLL TO TOP BUTTON
@@ -152,11 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(scrollBtn);
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      scrollBtn.classList.remove("hidden");
-    } else {
-      scrollBtn.classList.add("hidden");
-    }
+    scrollBtn.classList.toggle("hidden", window.scrollY <= 200);
   });
 
   scrollBtn.addEventListener("click", () => {
@@ -164,17 +130,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------
-  // CONTACT FORM WITH EMAILJS + TOAST
+  // CONTACT FORM + EMAILJS
   // ------------------------
   emailjs.init("0mqWwG4ZnyNkJFqOc");
 
   const form = document.querySelector("form");
+
+  function showToast(message) {
+    const toast = document.getElementById("toast");
+    const toastMsg = document.getElementById("toastMessage");
+    if (toast && toastMsg) {
+      toastMsg.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 3000);
+    }
+  }
+
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const emailField = this.email.value;
-      if (!emailField.includes("@") || !emailField.includes(".")) {
+      const email = this.email.value;
+      if (!email.includes("@") || !email.includes(".")) {
         showToast("❗ Please enter a valid email address");
         return;
       }
@@ -186,42 +163,58 @@ document.addEventListener('DOMContentLoaded', () => {
           showToast("✅ Message sent successfully!");
           this.reset();
         })
-        .catch((error) => {
-          console.error(error);
+        .catch(() => {
           showToast("❌ Failed to send message. Please try again.");
         });
     });
-  }
-
-  function showToast(message) {
-    const toast = document.getElementById("toast");
-    const toastMsg = document.getElementById("toastMessage");
-    toastMsg.textContent = message;
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 3000);
   }
 
   // ------------------------
   // SKILL ITEM ANIMATION
   // ------------------------
   const skillItems = document.querySelectorAll(".skill-item");
-
   skillItems.forEach((item, index) => {
-    setTimeout(() => {
-      item.classList.add("show");
-    }, index * 150);
-  });
-
-  skillItems.forEach(item => {
+    setTimeout(() => item.classList.add("show"), index * 150);
     item.addEventListener("click", () => {
       skillItems.forEach(el => el.classList.remove("active"));
       item.classList.add("active");
     });
   });
+
+  // ==== CERTIFICATE SLIDER (HORIZONTAL) ====
+const slides = document.querySelectorAll('.cert-slide');
+const dotsContainer = document.getElementById('certDots');
+let current = 0;
+
+function showSlide(idx) {
+  slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+  dotsContainer?.querySelectorAll('span').forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+
+// ❗ Hapus semua dots lama sebelum buat baru
+dotsContainer.innerHTML = '';
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.addEventListener('click', () => showSlide(current = i));
+  dotsContainer?.appendChild(dot);
+});
+
+showSlide(current);
+
+document.getElementById('prevCert')?.addEventListener('click', () => {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+});
+document.getElementById('nextCert')?.addEventListener('click', () => {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+});
+
 });
 
 // ------------------------
-// SPEECH FUNCTION
+// SPEECH FUNCTION & MENU TOGGLE
 // ------------------------
 function speak(text) {
   if ('speechSynthesis' in window) {
@@ -236,6 +229,7 @@ function speak(text) {
     alert("Text-to-Speech not supported in this browser.");
   }
 }
+
 function toggleMenu() {
-  document.querySelector('.nav-links').classList.toggle('active');
+  document.querySelector('.nav-links')?.classList.toggle('active');
 }
