@@ -29,9 +29,9 @@
    <header id="home" class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
     <div class="flex-1 text-left">
       <h1 class="text-3xl md:text-4xl font-semibold text-white leading-tight">
-        Hello, It's Me <span class="text-slate-900">Emilia</span>
+        Hello, It's Me <span class="text-[#6fa7ce]">Emilia</span>
       </h1>
-      <h2 class="text-2xl md:text-3xl font-medium text-gray-300 mt-4 h-[40px] border-r-2 border-white whitespace-nowrap overflow-hidden" id="typed-text"></h2>
+      <h2 class="text-2xl md:text-3xl font-medium text-pink-400 mt-4 h-[40px] border-r-2 border-white whitespace-nowrap overflow-hidden" id="typed-text"></h2>
       <p class="mt-4 text-white max-w-xl">
         Welcome to my portfolio website. I’m passionate about creating solutions and building things with technology.
       </p>
@@ -46,20 +46,22 @@
       <img src="img/picture.jpeg" alt="Emilia Ginting Formal" class="object-cover w-full h-full" />
     </div>
     <article class="flex-1 max-w-3xl text-white">
-      <h2 class="text-3xl font-semibold mb-3 border-b border-slate-700 pb-1 section-title">About <span>Me</span></h2>
-      <p class="mb-2 font-semibold text-slate-900">Emilia Adinda Putri Br Ginting</p>
+     <h2 class="text-3xl font-semibold mb-3 border-b border-slate-700 pb-1 section-title">
+  <span class="text-[#6fa7ce] font-semibold">About</span> <span class="text-white">Me</span>
+</h2>
+    <p class="mb-2 font-semibold text-[#6fa7ce]">Emilia Adinda Putri Br Ginting</p>
       <p class="leading-relaxed text-justify">
         I am a current President University student majoring in information technology with a focus on artificial intelligence. During my studies, I have become proficient in programming languages such as Python and Java, as well as web interface development using HTML, CSS, and JavaScript.
-To me, technology is more than just writing code; it is about creating practical and useful solutions. I am always looking to expand my knowledge through self-directed learning and keeping up with the latest developments in the tech industry so that I can stay relevant in the rapidly evolving digital landscape.
-In addition to my technical skills, I also enjoy collaborating with others, exchanging ideas, and solving problems as a team. I think curiosity, an open mind, and continuous improvement are key.
+        To me, technology is more than just writing code; it is about creating practical and useful solutions. I am always looking to expand my knowledge through self-directed learning and keeping up with the latest developments in the tech industry so that I can stay relevant in the rapidly evolving digital landscape.
+        In addition to my technical skills, I also enjoy collaborating with others, exchanging ideas, and solving problems as a team. I think curiosity, an open mind, and continuous improvement are key.
       </p>
     </article>
   </section>
 
-  <section id="skills" class="container mx-auto px-6 py-6">
-  <h2 class="text-3xl font-semibold text-center mb-5 section-title">
-    My <span>Skills & Tools</span>
-  </h2>
+  <section id="certificates" class="px-6 py-12">
+  <h2 class="section-title text-3xl font-semibold text-center mb-12">
+  <span style="color:white !important">Skill </span><span style="color:#6fa7ce !important">& Tools</span>
+</h2>
   <div id="skills-grid" class="grid grid-cols-5 gap-1 text-center text-gray-200">
     <!-- Skill items -->
     <div class="skill-item scroll-reveal bg-js" data-skill="JavaScript ">
@@ -113,79 +115,72 @@ In addition to my technical skills, I also enjoy collaborating with others, exch
   </div>
 </section>
 
-<section id="projects" class="container mx-auto px-6 py-8">
-  <h2 class="text-3xl font-semibold mb-8 text-center section-title">Latest <span>Projects</span></h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+<section id="projects" class="container mx-auto px-6 py-10">
+  <h2 class="text-3xl font-semibold text-center mb-10 text-[#6fa7ce]">Latest <span class="text-white">Projects</span></h2>
+  <div class="flex flex-col md:flex-row items-center bg-[#0f172a] rounded-xl shadow-lg p-6 mb-10 gap-6 text-white">
+    <img src="img/fdd.png" alt="Fraud Detection" class="w-full md:w-1/2 rounded-lg object-cover h-56" />
+    <div class="md:w-1/2">
+      <h3 class="text-xl font-semibold text-cyan-400 mb-2">Creditcard Fraud Detection</h3>
+      <p class="text-sm mb-4">This project aims to develop a fraud detection system for credit card transactions using machine learning methods. 
+        The system is designed to automatically identify suspicious or unusual transactions, helping financial institutions prevent losses caused by fraudulent activities.
+         By utilizing historical transaction data, the model is trained to recognize patterns commonly found in normal transactions and detect anomalies that may indicate potential fraud.
+        This project utilizes several algorithms, such as Autoencoder (for anomaly detection), Random Forest, and Isolation Forest (for classification and outlier detection). Each model's performance is analyzed to determine the most effective approach for detecting fraud. The project also saves the trained models along with their preprocessing steps, enabling reuse in production systems. Additionally, it includes the option of packaging the system using Docker for efficient and consistent deployment.</p>
+      <a href="https://github.com/emiliagtg/creditcard-fraud-detection" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-4 py-2 rounded-md text-sm font-semibold">PROJECT</a>
+    </div>
+  </div>
 
-    <!-- Project 1 -->
-    <a href="https://github.com/emiliagtg/creditcard-fraud-detection" target="_blank" class="block">
-      <div class="relative group shadow-md cursor-pointer rounded-lg overflow-hidden">
-        <img src="img/fdd.png" alt="Fraud Detection" class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4">
-          <h5 class="text-xl font-semibold mb-2">Creditcard Fraud Detection</h5>
-          <p class="text-sm">This project is a machine learning + deep learning based fraud detection system, using models such as Autoencoder, Random Forest, Isolation Forest, and XGBoost, and provides a Flask backend interface for demo or manual prediction.</p>
-        </div>
-      </div>
-    </a>
+  <div class="flex flex-col md:flex-row items-center bg-[#0f172a] rounded-xl shadow-lg p-6 mb-10 gap-6 text-white">
+    <img src="img/pet.png" alt="Fraud Detection" class="w-full md:w-1/2 rounded-lg object-cover h-56" />
+    <div class="md:w-1/2">
+      <h3 class="text-xl font-semibold text-cyan-400 mb-2">Creditcard Fraud Detection</h3>
+      <p class="text-sm mb-4">ML & DL system to detect fraud using Autoencoder, Random Forest, XGBoost, Isolation Forest. Integrated with Flask backend.</p>
+      <a href="https://github.com/emiliagtg/creditcard-fraud-detection" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-4 py-2 rounded-md text-sm font-semibold">PROJECT</a>
+    </div>
+  </div>
 
-    <!-- Project 2 -->
-    <a href="https://github.com/emiliagtg/Petcare_Assist" target="_blank" class="block">
-      <div class="relative group shadow-md cursor-pointer rounded-lg overflow-hidden">
-        <img src="img/pet.png" alt="Portfolio Website" class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4">
-          <h5 class="text-xl font-semibold mb-2">PetCare Web App</h5>
-          <p class="text-sm">The PetCare project is a Flask-based web application that serves as a Question Answering (QA) system to answer questions about pets such as dogs and cats. 
-            The system uses an NLP model to convert questions into meaning vectors (embeddings), and then matches them with QA datasets using FAISS (Facebook AI Similarity Search).
-            Users can ask questions naturally, and the system will provide the most relevant answers based on semantic similarity, not just keywords. This project uses technologies such as Python, Flask, Pandas, FAISS, and two transformer models (all-MiniLM-L6-v2 and all-mpnet-base-v2).</p>
-        </div>
-      </div>
-    </a>
 
-    <!-- Project 3 -->
-    <a href="https://github.com/emiliagtg/finalwmp" target="_blank" class="block">
-      <div class="relative group shadow-md cursor-pointer rounded-lg overflow-hidden">
-        <img src="img/presidentenroll.jpeg" alt="Enrollment" class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4">
-          <h5 class="text-xl font-semibold mb-2">Wireless Mobile Programming Enrollment</h5>
-          <p class="text-sm">Project Enrollment Wireless Mobile Programming is a Java-based Android application that provides user login and registration features using Firebase Authentication service.
-                             New users can register for an account, while existing users can login to access the main features of the application. All authentication processes are done securely through Firebase.
-                             In its development, this project uses Android Studio as the IDE, Java as the programming language, and Firebase as the authentication backend.</p>
-        </div>
-      </div>
-    </a>
+  <div class="flex flex-col md:flex-row items-center bg-[#0f172a] rounded-xl shadow-lg p-6 mb-10 gap-6 text-white">
+    <img src="img/medicence.png" alt="Fraud Detection" class="w-full md:w-1/2 rounded-lg object-cover h-56" />
+    <div class="md:w-1/2">
+      <h3 class="text-xl font-semibold text-cyan-400 mb-2">Creditcard Fraud Detection</h3>
+      <p class="text-sm mb-4">ML & DL system to detect fraud using Autoencoder, Random Forest, XGBoost, Isolation Forest. Integrated with Flask backend.</p>
+      <a href="https://github.com/emiliagtg/creditcard-fraud-detection" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-4 py-2 rounded-md text-sm font-semibold">PROJECT</a>
+    </div>
+  </div>
 
-    <!-- Project 4 -->
-    <a href="https://github.com/emiliagtg/chatbot-ai" target="_blank" class="block">
-      <div class="relative group shadow-md cursor-pointer rounded-lg overflow-hidden">
-        <img src="img/medicence.png" alt="Chatbot AI" class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-black bg-opacity-70 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-4">
-          <h5 class="text-xl font-semibold mb-2">Tumor Segmentation</h5>
-          <p class="text-sm">In this project, tumor image segmentation is performed using two different methods: 
-            simple thresholding and K-Means clustering. This project aims to explore and compare the effectiveness of both methods in detecting or separating tumor areas in grayscale images.</p>
-        </div>
-      </div>
-    </a>
-</div>
+
+  <div class="flex flex-col md:flex-row items-center bg-[#0f172a] rounded-xl shadow-lg p-6 mb-10 gap-6 text-white">
+    <img src="img/presidentenroll.jpeg" alt="Fraud Detection" class="w-full md:w-1/2 rounded-lg object-cover h-56" />
+    <div class="md:w-1/2">
+      <h3 class="text-xl font-semibold text-cyan-400 mb-2">Creditcard Fraud Detection</h3>
+      <p class="text-sm mb-4">ML & DL system to detect fraud using Autoencoder, Random Forest, XGBoost, Isolation Forest. Integrated with Flask backend.</p>
+      <a href="https://github.com/emiliagtg/creditcard-fraud-detection" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-4 py-2 rounded-md text-sm font-semibold">PROJECT</a>
+    </div>
+  </div>
+
 </section>
 
-  <section id="certificates" class="px-6 py-12">
-    <h2 class="text-3xl font-semibold text-center mb-12 text-cyan-400">Certificates</h2>
-    <div class="cert-slider relative max-w-6xl mx-auto">
+<section id="certificates" class="px-6 py-12">
+   <h2 class="text-3xl font-semibold mb-6 text-center">
+  <span class="text-white">Certifi</span><span class="text-[#6fa7ce]">cations</span>
+</h2>
+
+<div class="cert-slider relative max-w-6xl mx-auto">
       <div class="cert-slide active">
         <div class="cert-card">
           <img src="img/certificate_dicoding_java.jpeg" alt="Certificate 1" class="cert-img" />
           <div class="cert-desc">
-            <h3 class="text-2xl font-bold text-cyan-400 mb-3">Belajar Dasar Pemrograman JavaScript</h3>
-            <p class="text-gray-300 text-base leading-relaxed">Sertifikat dari Dicoding, membahas dasar logika pemrograman menggunakan JavaScript, termasuk struktur kontrol, fungsi, dan objek.</p>
+            <h3 class="text-2xl font-bold text-gray-400 mb-3">Belajar Dasar Pemrograman JavaScript</h3>
+            <p class="text-white text-base leading-relaxed">Sertifikat dari Dicoding, membahas dasar logika pemrograman menggunakan JavaScript, termasuk struktur kontrol, fungsi, dan objek.</p>
           </div>
         </div>
       </div>
-      <!-- Sertifikat lainnya dikoreksi dari yang sebelumnya sama -->
+
       <div class="cert-slide">
         <div class="cert-card">
           <img src="img/dicertificate_dicoding_AIPraktis.jpg" alt="Certificate 2" class="cert-img" />
           <div class="cert-desc">
-            <h3 class="text-2xl font-bold text-cyan-400 mb-3">AI Praktis untuk Produktivitas</h3>
+            <h3 class="text-2xl font-bold text-gray-400 mb-3">AI Praktis untuk Produktivitas</h3>
             <p class="text-gray-300 text-base leading-relaxed">Pelatihan AI dari Dicoding x AVPN untuk pemanfaatan AI dalam produktivitas sehari-hari seperti penulisan dan otomasi.</p>
           </div>
         </div>
@@ -194,7 +189,7 @@ In addition to my technical skills, I also enjoy collaborating with others, exch
         <div class="cert-card">
           <img src="img/certificate_digitalent_AI Intermediate.jpg" alt="Certificate 3" class="cert-img" />
           <div class="cert-desc">
-            <h3 class="text-2xl font-bold text-cyan-400 mb-3">AI Intermediate Digitalent</h3>
+            <h3 class="text-2xl font-bold text-gray-400 mb-3">AI Intermediate Digitalent</h3>
             <p class="text-gray-300 text-base leading-relaxed">Pelatihan lanjutan AI untuk produktivitas dan inovasi berbasis teknologi digital.</p>
           </div>
         </div>
@@ -203,7 +198,7 @@ In addition to my technical skills, I also enjoy collaborating with others, exch
         <div class="cert-card">
           <img src="img/certificate_digitalent_AIBeginner.jpg" alt="Certificate 4" class="cert-img" />
           <div class="cert-desc">
-            <h3 class="text-2xl font-bold text-cyan-400 mb-3">AI Beginner Digitalent</h3>
+            <h3 class="text-2xl font-bold text-gray-400 mb-3">AI Beginner Digitalent</h3>
             <p class="text-gray-300 text-base leading-relaxed">Dasar penggunaan AI untuk pemula, mencakup konsep dan tools AI praktis.</p>
           </div>
         </div>
@@ -221,15 +216,10 @@ In addition to my technical skills, I also enjoy collaborating with others, exch
         <div class="cert-card">
           <img src="img/certificate_digitalent.jpg" alt="Certificate 6" class="cert-img" />
           <div class="cert-desc">
-            <h3 class="text-2xl font-bold text-cyan-400 mb-3">AI untuk Semua</h3>
+            <h3 class="text-2xl font-bold text-gray-400 mb-3">AI untuk Semua</h3>
             <p class="text-gray-300 text-base leading-relaxed">Pelatihan inklusif dari Digitalent untuk memperkenalkan AI secara umum bagi semua kalangan.</p>
           </div>
         </div>
-      </div>
-
-      <div class="cert-nav">
-        <button id="prevCert" class="cert-btn">‹</button>
-        <button id="nextCert" class="cert-btn">›</button>
       </div>
 
       <div class="cert-dots text-center mt-4" id="certDots"></div>
@@ -238,15 +228,17 @@ In addition to my technical skills, I also enjoy collaborating with others, exch
 
   <section id="contact" class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-10">
     <div class="flex-1 text-white">
-      <h2 class="text-3xl font-semibold mb-5 section-title"><span>Contact</span> Me</h2>
-      <p class="mb-3 max-w-lg leading-relaxed">
+      <h2 class="text-3xl font-semibold mb-5 section-title">
+  <span class="text-[#6fa7ce]">Contact</span> <span class="text-white">Me</span>
+</h2>
+     <p class="mb-3 max-w-lg leading-relaxed">
         Let's work together<br />
         I appreciate you taking the time to look at my work.
         Please contact me using the form below if you have any questions, suggestions, or opportunities for collaboration.
         I’m always excited to connect, discuss new ideas, and work together to create amazing things.
         I look forward to hearing from you!
       </p>
-      <div class="flex space-x-5 mt-6 text-sky-500 text-2xl">
+      <div class="flex space-x-5 mt-6 text-[#6fa7ce] text-2xl">
         <a href="https://www.linkedin.com/in/emilia-adinda-putri-br-ginting-b7a33828b" target="_blank" class="hover:text-slate-700"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/emiliagtg" target="_blank" class="hover:text-slate-700"><i class="fab fa-github"></i></a>
         <a href="https://www.instagram.com/_emiliaginting" target="_blank" class="hover:text-slate-700"><i class="fab fa-instagram"></i></a>
@@ -600,6 +592,9 @@ In addition to my technical skills, I also enjoy collaborating with others, exch
 
 </body>
 </html>
+<button id="scrollToTopBtn" class="fixed bottom-6 right-6 bg-[#6fa7ce] p-3 rounded-full shadow-lg hover:bg-[#5a94c0] transition">
+  <i class="fas fa-arrow-up text-white hover:scale-110 transition duration-300"></i>
+</button>
 
 </body>
 </html>

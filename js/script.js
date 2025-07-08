@@ -87,30 +87,36 @@ document.addEventListener('DOMContentLoaded', () => {
   // TYPING TEXT EFFECT
   // ------------------------
   const phrases = [
-    "I am an Information Technology Student",
-    "I specialize in Artificial Intelligence"
-  ];
+  '<span style="color:#6fa7ce;">I am an Information Technology Student</span>', // sky-400
+  '<span style="color:#6fa7ce;">I specialize in Artificial Intelligence</span>'  // pink-400
+];
 
-  const typedText = document.getElementById("typed-text");
-  let phraseIndex = 0, charIndex = 0, isDeleting = false;
+const typedText = document.getElementById("typed-text");
+let phraseIndex = 0, charIndex = 0, isDeleting = false;
 
-  function typeEffect() {
-    const current = phrases[phraseIndex];
-    typedText.textContent = isDeleting
-      ? current.substring(0, charIndex--)
-      : current.substring(0, charIndex++);
+function typeEffect() {
+  const current = phrases[phraseIndex];
+  const cleanText = current.replace(/<[^>]*>?/gm, ''); // Strip tags to count only text
 
-    if (!isDeleting && charIndex === current.length) {
-      setTimeout(() => isDeleting = true, 2000);
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-    }
+  const visible = isDeleting
+    ? cleanText.substring(0, charIndex--)
+    : cleanText.substring(0, charIndex++);
 
-    setTimeout(typeEffect, isDeleting ? 40 : 100);
+  const visibleHTML = current.replace(cleanText, visible);
+
+  typedText.innerHTML = visibleHTML;
+
+  if (!isDeleting && charIndex === cleanText.length) {
+    setTimeout(() => isDeleting = true, 2000);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
   }
 
-  if (typedText) typeEffect();
+  setTimeout(typeEffect, isDeleting ? 40 : 100);
+}
+
+if (typedText) typeEffect();
 
   // ------------------------
   // SCROLL TO TOP BUTTON
@@ -182,14 +188,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==== CERTIFICATE SLIDER (HORIZONTAL) ====
-const slides = document.querySelectorAll('.cert-slide');
-const dotsContainer = document.getElementById('certDots');
-let current = 0;
+dotsContainer.innerHTML = '';
 
-function showSlide(idx) {
-  slides.forEach((s, i) => s.classList.toggle('active', i === idx));
-  dotsContainer?.querySelectorAll('span').forEach((d, i) => d.classList.toggle('active', i === idx));
+const maxDots = 6;
+for (let i = 0; i < Math.min(slides.length, maxDots); i++) {
+  const dot = document.createElement('span');
+  dot.addEventListener('click', () => showSlide(current = i));
+  dotsContainer?.appendChild(dot);
 }
+
 
 // ❗ Hapus semua dots lama sebelum buat baru
 dotsContainer.innerHTML = '';
@@ -201,15 +208,6 @@ slides.forEach((_, i) => {
 });
 
 showSlide(current);
-
-document.getElementById('prevCert')?.addEventListener('click', () => {
-  current = (current - 1 + slides.length) % slides.length;
-  showSlide(current);
-});
-document.getElementById('nextCert')?.addEventListener('click', () => {
-  current = (current + 1) % slides.length;
-  showSlide(current);
-});
 
 });
 
