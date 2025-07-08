@@ -73,62 +73,79 @@ Outside of coding, I have a strong interest in the intersections between technol
     </article>
   </section>
 
-  <section id="skills" class="px-6 py-12">
+ <section id="skills" class="px-6 py-12">
   <h2 class="section-title text-3xl font-semibold text-center mb-12">
-    <span style="color:white !important">Skill </span><span style="color:#6fa7ce !important">& Tools</span>
+    <span class="text-white">Skill </span><span class="text-[#6fa7ce]">& Tools</span>
   </h2>
-  <div id="skills-grid" class="grid grid-cols-5 gap-1 text-center text-gray-200">
-    <!-- Skill items -->
-    <div class="skill-item scroll-reveal bg-js" data-skill="JavaScript ">
-  <img src="img/logo_javascript.png" class="skill-icon" alt="JavaScript  Icon" />
-</div>
 
-<div class="skill-item scroll-reveal bg-html" data-skill="HTML ">
-  <img src="img/logo_html.png" class="skill-icon" alt="HTML  Icon" />
-</div>
+  <!-- Tambahan wrapper untuk responsif mobile -->
+  <div class="flex justify-center md:justify-start">
+    <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center text-gray-200 max-w-screen-sm md:max-w-full mx-auto">
+      
+      <!-- JavaScript -->
+      <div class="skill-item scroll-reveal bg-js">
+        <img src="img/logo_javascript.png" class="skill-icon w-16 h-16 mx-auto" alt="JavaScript Icon" />
+      </div>
 
-<div class="skill-item scroll-reveal bg-css" data-skill="CSS ">
-  <img src="img/logo_css.png" class="skill-icon" alt="CSS Icon" />
-</div>
+      <!-- HTML -->
+      <div class="skill-item scroll-reveal bg-html">
+        <img src="img/logo_html.png" class="skill-icon w-16 h-16 mx-auto" alt="HTML Icon" />
+      </div>
 
-    <div class="skill-item scroll-reveal bg-php" data-skill="PHP">
-  <img src="img/logo_php.png" class="skill-icon" alt="PHP Icon" />
-</div>
+      <!-- CSS -->
+      <div class="skill-item scroll-reveal bg-css">
+        <img src="img/logo_css.png" class="skill-icon w-16 h-16 mx-auto" alt="CSS Icon" />
+      </div>
 
-<div class="skill-item scroll-reveal bg-python" data-skill="Python">
-  <img src="img/Python.png" class="skill-icon" alt="Python Icon" />
-</div>
+      <!-- PHP -->
+      <div class="skill-item scroll-reveal bg-php">
+        <img src="img/logo_php.png" class="skill-icon w-16 h-16 mx-auto" alt="PHP Icon" />
+      </div>
 
-<div class="skill-item scroll-reveal bg-java" data-skill="Java">
-  <img src="img/Java.png" class="skill-icon" alt="Java Icon" />
-</div>
+      <!-- Python -->
+      <div class="skill-item scroll-reveal bg-python">
+        <img src="img/Python.png" class="skill-icon w-16 h-16 mx-auto" alt="Python Icon" />
+      </div>
 
-   <div class="skill-item scroll-reveal bg-cpp" data-skill="C++">
-  <img src="img/ISO_C++_Logo.svg.png" class="skill-icon" alt="C++ Icon" />
-</div>
+      <!-- Java -->
+      <div class="skill-item scroll-reveal bg-java">
+        <img src="img/Java.png" class="skill-icon w-16 h-16 mx-auto" alt="Java Icon" />
+      </div>
 
-<div class="skill-item scroll-reveal bg-sql" data-skill="SQL">
-  <img src="img/logo_sql.png" class="skill-icon" alt="SQL Icon" />
-</div>
+      <!-- C++ -->
+      <div class="skill-item scroll-reveal bg-cpp">
+        <img src="img/ISO_C++_Logo.svg.png" class="skill-icon w-16 h-16 mx-auto" alt="C++ Icon" />
+      </div>
 
-<div class="skill-item scroll-reveal bg-laravel" data-skill="Laravel">
-  <img src="img/Laravel.svg.png" class="skill-icon" alt="Laravel Icon" />
-</div>
+      <!-- SQL -->
+      <div class="skill-item scroll-reveal bg-sql">
+        <img src="img/logo_sql.png" class="skill-icon w-16 h-16 mx-auto" alt="SQL Icon" />
+      </div>
 
-<div class="skill-item scroll-reveal bg-androids" data-skill="Androids">
-  <img src="img/logo_androids.png" class="skill-icon" alt="Androids Icon" />
-</div>
+      <!-- Laravel -->
+      <div class="skill-item scroll-reveal bg-laravel">
+        <img src="img/Laravel.svg.png" class="skill-icon w-16 h-16 mx-auto" alt="Laravel Icon" />
+      </div>
 
-<div class="skill-item scroll-reveal bg-vscode" data-skill="Vscode">
-  <img src="img/vscode-logo.png.webp" class="skill-icon" alt=" Icon" />
-</div>
+      <!-- Android -->
+      <div class="skill-item scroll-reveal bg-androids">
+        <img src="img/logo_androids.png" class="skill-icon w-16 h-16 mx-auto" alt="Android Icon" />
+      </div>
 
-<div class="skill-item scroll-reveal bg-github" data-skill="Github">
-  <img src="img/logo_github.svg" class="skill-icon" alt="Github Icon" />
-</div>
+      <!-- VSCode -->
+      <div class="skill-item scroll-reveal bg-vscode">
+        <img src="img/vscode-logo.png.webp" class="skill-icon w-16 h-16 mx-auto" alt="VSCode Icon" />
+      </div>
 
+      <!-- GitHub -->
+      <div class="skill-item scroll-reveal bg-github">
+        <img src="img/logo_github.svg" class="skill-icon w-16 h-16 mx-auto" alt="GitHub Icon" />
+      </div>
+
+    </div>
   </div>
 </section>
+
 
 <section id="projects" class="container mx-auto px-6 py-10">
   <h2 class="text-3xl font-semibold text-center mb-10 text-[#6fa7ce]">Latest <span class="text-white">Projects</span></h2>
