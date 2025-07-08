@@ -11,17 +11,16 @@
 <body class="min-h-screen flex flex-col">
   <canvas id="star-canvas"></canvas>
 
-  <<nav class="bg-slate-900 border-b border-slate-700">
+  <nav class="bg-slate-900 border-b border-slate-700">
   <div class="container mx-auto px-6 py-3">
-    <!-- Wrapper: stack on small screen, row on medium up -->
     <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-      <!-- Nama -->
-      <div class="text-lg text-white font-semibold mb-3 md:mb-0">
+      <!-- Nama diposisikan tengah + agak ke bawah -->
+      <div class="text-lg text-white font-bold mb-4 md:mb-0 md:mr-8 text-center md:text-left">
         Emilia Ginting
       </div>
 
-      <!-- Menu Grid on Mobile, Horizontal on Desktop -->
-      <ul class="grid grid-cols-3 gap-2 text-sm text-white text-center md:flex md:space-x-6 md:text-left">
+      <!-- Menu Grid (rapi + rata tengah/kanan) -->
+      <ul class="grid grid-cols-3 gap-x-8 gap-y-3 text-sm text-white text-center md:flex md:space-x-6 md:text-left md:justify-end">
         <li><a href="#home" class="nav-link hover:text-white">Home</a></li>
         <li><a href="#about" class="nav-link hover:text-white">About Me</a></li>
         <li><a href="#skills" class="nav-link hover:text-white">Skill</a></li>
@@ -32,6 +31,7 @@
     </div>
   </div>
 </nav>
+
 
 <header id="home" class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
     <div class="flex-1 text-left">
