@@ -11,22 +11,29 @@
 <body class="min-h-screen flex flex-col">
   <canvas id="star-canvas"></canvas>
 
-  <nav class="bg-slate-900 border-b border-slate-700">
-    <div class="container mx-auto flex items-center justify-between px-6 py-3">
-      <div class="text-sm text-white-300 font-semibold">Emilia Ginting</div>
-      <ul class="flex space-x-6 text-white-300">
-        <li><a href="#home" class="nav-link hover:text-white-300">Home</a></li>
-        <li><a href="#about" class="nav-link hover:text-white-300">About me</a></li>
-        <li><a href="#skills" class="nav-link hover:text-white-300">Skill</a></li>
-        <li><a href="#projects" class="nav-link hover:text-white-300">Project</a></li>
-        <li><a href="#certificates" class="nav-link hover:text-white-300">Certification</a></li>
-        <li><a href="#contact" class="nav-link hover:text-white-300">Contact</a></li>
-        
+  <<nav class="bg-slate-900 border-b border-slate-700">
+  <div class="container mx-auto px-6 py-3">
+    <!-- Wrapper: stack on small screen, row on medium up -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+      <!-- Nama -->
+      <div class="text-lg text-white font-semibold mb-3 md:mb-0">
+        Emilia Ginting
+      </div>
+
+      <!-- Menu Grid on Mobile, Horizontal on Desktop -->
+      <ul class="grid grid-cols-3 gap-2 text-sm text-white text-center md:flex md:space-x-6 md:text-left">
+        <li><a href="#home" class="nav-link hover:text-white">Home</a></li>
+        <li><a href="#about" class="nav-link hover:text-white">About Me</a></li>
+        <li><a href="#skills" class="nav-link hover:text-white">Skill</a></li>
+        <li><a href="#projects" class="nav-link hover:text-white">Project</a></li>
+        <li><a href="#certificates" class="nav-link hover:text-white">Certification</a></li>
+        <li><a href="#contact" class="nav-link hover:text-white">Contact</a></li>
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-   <header id="home" class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
+<header id="home" class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
     <div class="flex-1 text-left">
       <h1 class="text-3xl md:text-4xl font-semibold text-white leading-tight">
         Hello, It's Me <span class="text-[#6fa7ce]">Emilia</span>
