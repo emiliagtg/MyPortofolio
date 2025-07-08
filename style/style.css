@@ -4,16 +4,18 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
-
-.section-title {
-  text-align: center;
-  color: #ffffff;
+.skill-section-title span {
+  color: #6fa7ce;
 }
 
-.section-title span {
-  color: #0b172a;
-  user-select: none;
+.skill-white {
+  color: white !important;
 }
+
+.skill-highlight {
+  color: #6fa7ce !important;
+}
+
 
 #skills-grid {
   display: grid;
@@ -428,7 +430,6 @@ button[type="submit"]:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ✅ REVISI DIMULAI DI SINI */
 .cert-card {
   display: flex;
   flex-direction: column;
@@ -449,7 +450,6 @@ button[type="submit"]:hover {
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
 }
-/* ✅ REVISI SELESAI */
 
 .cert-desc {
   flex: 1;
