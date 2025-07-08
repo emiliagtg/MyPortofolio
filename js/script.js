@@ -231,3 +231,24 @@ function speak(text) {
 function toggleMenu() {
   document.querySelector('.nav-links')?.classList.toggle('active');
 }
+let currentIndex = 0;
+
+function updateSlider() {
+  const slider = document.getElementById('certSlider');
+  const certs = slider.children.length;
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function nextCert() {
+  const slider = document.getElementById('certSlider');
+  const certs = slider.children.length;
+  currentIndex = (currentIndex + 1) % certs;
+  updateSlider();
+}
+
+function prevCert() {
+  const slider = document.getElementById('certSlider');
+  const certs = slider.children.length;
+  currentIndex = (currentIndex - 1 + certs) % certs;
+  updateSlider();
+}
