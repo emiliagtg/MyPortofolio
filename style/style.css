@@ -363,7 +363,7 @@ nav ul li a:hover {
 }
 
 form {
-  background-color: #040a1b;
+  background-color: #000000;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -373,7 +373,7 @@ input,
 textarea {
   background-color: #15213e;
   color: #ffffff;
-  border: 1px solid #334155;
+  border: 1px solid #6fa7ce;
   padding: 10px;
   border-radius: 6px;
   margin-top: 0.5rem;
@@ -401,7 +401,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #939398;
+  background-color: #6fa7ce;
 }
 
 /* Skill Icon Color Override */
