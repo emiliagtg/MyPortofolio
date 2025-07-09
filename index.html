@@ -14,12 +14,10 @@
   <nav class="bg-slate-900 border-b border-slate-700">
   <div class="container mx-auto px-6 py-3">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-      <!-- Nama diposisikan tengah + agak ke bawah -->
       <div class="text-lg text-white font-bold mb-4 md:mb-0 md:mr-8 text-center md:text-left">
         Emilia Ginting
       </div>
 
-      <!-- Menu Grid (rapi + rata tengah/kanan) -->
       <ul class="grid grid-cols-3 gap-x-8 gap-y-3 text-sm text-white text-center md:flex md:space-x-6 md:text-left md:justify-end">
         <li><a href="#home" class="nav-link hover:text-white">Home</a></li>
         <li><a href="#about" class="nav-link hover:text-white">About Me</a></li>
@@ -31,7 +29,6 @@
     </div>
   </div>
 </nav>
-
 
 <header id="home" class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
     <div class="flex-1 text-left">
@@ -73,134 +70,220 @@ Outside of coding, I have a strong interest in the intersections between technol
     </article>
   </section>
 
- <section id="skills" class="px-6 py-12">
-  <h2 class="section-title text-3xl font-semibold text-center mb-12">
+ <!-- SKILLS SECTION -->
+<section id="skills" class="px-6 py-12">
+  <h2 class="text-3xl font-semibold text-center mb-12">
     <span class="text-white">Skill </span><span class="text-[#6fa7ce]">& Tools</span>
   </h2>
 
-  <!-- Tambahan wrapper untuk responsif mobile -->
-  <div class="flex justify-center md:justify-start">
-    <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center text-gray-200 max-w-screen-sm md:max-w-full mx-auto">
+  <div class="flex justify-center">
+    <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-center text-gray-200 max-w-screen-sm md:max-w-full mx-auto">
       
-      <!-- JavaScript -->
-      <div class="skill-item scroll-reveal bg-js">
-        <img src="img/logo_javascript.png" class="skill-icon w-16 h-16 mx-auto" alt="JavaScript Icon" />
+      <!-- ICON ITEM TEMPLATE -->
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-cyan-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-cyan-400 animate-fade-in">
+          <img src="img/logo_javascript.png" class="w-16 h-16 mx-auto" alt="JavaScript" />
+        </div>
       </div>
 
-      <!-- HTML -->
-      <div class="skill-item scroll-reveal bg-html">
-        <img src="img/logo_html.png" class="skill-icon w-16 h-16 mx-auto" alt="HTML Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-orange-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-orange-400 animate-fade-in">
+          <img src="img/logo_html.png" class="w-16 h-16 mx-auto" alt="HTML" />
+        </div>
       </div>
 
-      <!-- CSS -->
-      <div class="skill-item scroll-reveal bg-css">
-        <img src="img/logo_css.png" class="skill-icon w-16 h-16 mx-auto" alt="CSS Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-blue-400 animate-fade-in">
+          <img src="img/logo_css.png" class="w-16 h-16 mx-auto" alt="CSS" />
+        </div>
       </div>
 
-      <!-- PHP -->
-      <div class="skill-item scroll-reveal bg-php">
-        <img src="img/logo_php.png" class="skill-icon w-16 h-16 mx-auto" alt="PHP Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-indigo-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-indigo-400 animate-fade-in">
+          <img src="img/logo_php.png" class="w-16 h-16 mx-auto" alt="PHP" />
+        </div>
       </div>
 
-      <!-- Python -->
-      <div class="skill-item scroll-reveal bg-python">
-        <img src="img/Python.png" class="skill-icon w-16 h-16 mx-auto" alt="Python Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-yellow-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-yellow-400 animate-fade-in">
+          <img src="img/Python.png" class="w-16 h-16 mx-auto" alt="Python" />
+        </div>
       </div>
 
-      <!-- Java -->
-      <div class="skill-item scroll-reveal bg-java">
-        <img src="img/Java.png" class="skill-icon w-16 h-16 mx-auto" alt="Java Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-orange-300/40 hover:shadow-2xl border border-gray-200 group-hover:border-orange-300 animate-fade-in">
+          <img src="img/Java.png" class="w-16 h-16 mx-auto" alt="Java" />
+        </div>
       </div>
 
-      <!-- C++ -->
-      <div class="skill-item scroll-reveal bg-cpp">
-        <img src="img/ISO_C++_Logo.svg.png" class="skill-icon w-16 h-16 mx-auto" alt="C++ Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-500/40 hover:shadow-2xl border border-gray-200 group-hover:border-blue-500 animate-fade-in">
+          <img src="img/ISO_C++_Logo.svg.png" class="w-16 h-16 mx-auto" alt="C++" />
+        </div>
       </div>
 
-      <!-- SQL -->
-      <div class="skill-item scroll-reveal bg-sql">
-        <img src="img/logo_sql.png" class="skill-icon w-16 h-16 mx-auto" alt="SQL Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-sky-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-sky-400 animate-fade-in">
+          <img src="img/logo_sql.png" class="w-16 h-16 mx-auto" alt="MySQL" />
+        </div>
       </div>
 
-      <!-- Laravel -->
-      <div class="skill-item scroll-reveal bg-laravel">
-        <img src="img/Laravel.svg.png" class="skill-icon w-16 h-16 mx-auto" alt="Laravel Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-red-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-red-400 animate-fade-in">
+          <img src="img/Laravel.svg.png" class="w-16 h-16 mx-auto" alt="Laravel" />
+        </div>
       </div>
 
-      <!-- Android -->
-      <div class="skill-item scroll-reveal bg-androids">
-        <img src="img/logo_androids.png" class="skill-icon w-16 h-16 mx-auto" alt="Android Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-green-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-green-400 animate-fade-in">
+          <img src="img/logo_androids.png" class="w-16 h-16 mx-auto" alt="Android Studio" />
+        </div>
       </div>
 
-      <!-- VSCode -->
-      <div class="skill-item scroll-reveal bg-vscode">
-        <img src="img/vscode-logo.png.webp" class="skill-icon w-16 h-16 mx-auto" alt="VSCode Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-blue-400 animate-fade-in">
+          <img src="img/vscode-logo.png.webp" class="w-16 h-16 mx-auto" alt="VSCode" />
+        </div>
       </div>
 
-      <!-- GitHub -->
-      <div class="skill-item scroll-reveal bg-github">
-        <img src="img/logo_github.svg" class="skill-icon w-16 h-16 mx-auto" alt="GitHub Icon" />
+      <div class="skill-item group">
+        <div class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-purple-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-purple-400 animate-fade-in">
+          <img src="img/logo_github.svg" class="w-16 h-16 mx-auto" alt="GitHub" />
+        </div>
       </div>
 
+    </div>
+  </div>
+</section><section id="projects" class="container mx-auto px-6 py-14">
+  <h2 class="text-3xl font-semibold text-center mb-12 text-[#6fa7ce]">
+    Latest <span class="text-white">Projects</span>
+  </h2>
+
+  <div class="space-y-12">
+    <!-- PROJECT CARD -->
+    <div
+      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500"
+    >
+      <div class="md:w-1/2">
+        <img src="img/fdd.png" alt="Fraud Detection"
+          class="w-full h-64 object-cover rounded-xl shadow-md" />
+      </div>
+      <div class="md:w-1/2 flex flex-col justify-center">
+        <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Creditcard Fraud Detection</h3>
+        <p class="text-sm mb-4 leading-relaxed">
+          This project aims to develop a fraud detection system for credit card transactions using machine learning methods. 
+          The system is designed to automatically identify suspicious or unusual transactions, helping financial institutions prevent losses caused by fraudulent activities.
+          By utilizing historical transaction data, the model is trained to recognize patterns commonly found in normal transactions and detect anomalies that may indicate potential fraud.
+          This project utilizes several algorithms, such as Autoencoder (for anomaly detection), Random Forest, and Isolation Forest (for classification and outlier detection). 
+          Each model's performance is analyzed to determine the most effective approach for detecting fraud. 
+          The project also saves the trained models along with their preprocessing steps, enabling reuse in production systems. 
+          Additionally, it includes the option of packaging the system using Docker for efficient and consistent deployment.
+        </p>
+        <a href="https://github.com/emiliagtg/creditcard-fraud-detection" target="_blank"
+          class="mt-2 border border-cyan-400 text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition">
+          PROJECT
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div
+      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500"
+    >
+      <div class="md:w-1/2">
+        <img src="img/pet.png" alt="Petcare Assistant"
+          class="w-full h-64 object-cover rounded-xl shadow-md" />
+      </div>
+      <div class="md:w-1/2 flex flex-col justify-center">
+        <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Petcare Asst</h3>
+        <p class="text-sm mb-4 leading-relaxed">
+          PetCare Q&A Web App is a web-based application designed to provide automatic answers to common questions about pet care, specifically for cats and dogs. 
+          The app allows users to ask questions related to their pets and instantly receive responses based on a pre-defined dataset of question-answer pairs. 
+          The system is developed using Python, with the Flask framework handling backend operations such as routing, question matching logic, and data integration. 
+          For the user interface, HTML and CSS are used to structure and style the layout, while JavaScript enables dynamic user interactions like sending and receiving messages on the chat page. 
+          The HTML templates are rendered using Jinja2, Flask’s built-in templating engine, which allows dynamic content to be embedded into web pages. 
+          All Q&A data is stored in a CSV file, which is processed on the server side to match user questions with the most relevant answers. 
+        </p>
+        <a href="https://github.com/emiliagtg/Petcare_Assist.git" target="_blank"
+          class="mt-2 border border-cyan-400 text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition">
+          PROJECT
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div
+      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500"
+    >
+      <div class="md:w-1/2">
+        <img src="img/medicence.png" alt="MediAI Assist"
+          class="w-full h-64 object-cover rounded-xl shadow-md" />
+      </div>
+      <div class="md:w-1/2 flex flex-col justify-center">
+        <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">MediAI Assist</h3>
+        <p class="text-sm mb-4 leading-relaxed">
+          Medisense is an AI-powered web application designed to classify skin diseases based on user-uploaded images. 
+          The project aims to provide an early detection tool for various skin conditions by utilizing a deep learning model trained on real-world dermatological datasets. 
+          The backend of the application is developed using Python and the Flask framework, which handles server-side logic, image processing, and integration with the trained AI model. 
+          The image classification model is built using TensorFlow and Keras, and is saved in .h5 format for easy deployment. 
+          Users can upload images of skin conditions, and the system returns a predicted diagnosis based on the AI model’s output.
+        </p>
+        <a href="https://github.com/emiliagtg/medisense.git" target="_blank"
+          class="mt-2 border border-cyan-400 text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition">
+          PROJECT
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div
+      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500"
+    >
+      <div class="md:w-1/2">
+        <img src="img/presidentenroll.jpeg" alt="Presu Enrollment"
+          class="w-full h-64 object-cover rounded-xl shadow-md" />
+      </div>
+      <div class="md:w-1/2 flex flex-col justify-center">
+        <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Presu Enrollment</h3>
+        <p class="text-sm mb-4 leading-relaxed">
+          President University Enrollment is a digital application designed to simplify the course enrollment process for university students. 
+          Users are required to log in or register an account before accessing the main features. Once logged in, they are directed to the homepage, which provides two main options: course selection and viewing the enrollment summary. 
+          The application features a dark theme with a minimalist and intuitive design.
+          The application is developed using JavaScript with a modular approach, and applies concepts like OOP, recursion, and unit testing to ensure robustness and maintainability.
+        </p>
+        <a href="https://github.com/emiliagtg/finalwmp.git" target="_blank"
+          class="mt-2 border border-cyan-400 text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition">
+          PROJECT
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-
-<section id="projects" class="container mx-auto px-6 py-10">
-  <h2 class="text-3xl font-semibold text-center mb-10 text-[#6fa7ce]">Latest <span class="text-white">Projects</span></h2>
-  <div class="flex flex-col md:flex-row items-center bg-[#0f172a] rounded-xl shadow-lg p-6 mb-10 gap-6 text-white">
-    <img src="img/fdd.png" alt="Fraud Detection" class="w-full md:w-1/2 rounded-lg object-cover h-56" />
-    <div class="md:w-1/2">
-      <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Creditcard Fraud Detection</h3>
-      <p class="text-sm mb-4">This project aims to develop a fraud detection system for credit card transactions using machine learning methods. 
-        The system is designed to automatically identify suspicious or unusual transactions, helping financial institutions prevent losses caused by fraudulent activities.
-         By utilizing historical transaction data, the model is trained to recognize patterns commonly found in normal transactions and detect anomalies that may indicate potential fraud.
-        This project utilizes several algorithms, such as Autoencoder (for anomaly detection), Random Forest, and Isolation Forest (for classification and outlier detection). Each model's performance is analyzed to determine the most effective approach for detecting fraud. The project also saves the trained models along with their preprocessing steps, enabling reuse in production systems. Additionally, it includes the option of packaging the system using Docker for efficient and consistent deployment.</p>
-      <a href="https://github.com/emiliagtg/creditcard-fraud-detection" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold">PROJECT</a>
-    </div>
-  </div>
-
-  <div class="flex flex-col md:flex-row items-center bg-[#0f172a] rounded-xl shadow-lg p-6 mb-10 gap-6 text-white">
-    <img src="img/pet.png" alt="Fraud Detection" class="w-full md:w-1/2 rounded-lg object-cover h-56" />
-    <div class="md:w-1/2">
-      <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Petcare Asst</h3>
-      <p class="text-sm mb-4">PetCare Q&A Web App is a web-based application designed to provide automatic answers to common questions about pet care, specifically for cats and dogs. The app allows users to ask questions related to their pets and instantly receive responses based on a pre-defined dataset of question-answer pairs. The system is developed using Python, with the Flask framework handling backend operations such as routing, question matching logic, and data integration. For the user interface, HTML and CSS are used to structure and style the layout, while JavaScript enables dynamic user interactions like sending and receiving messages on the chat page. The HTML templates are rendered using Jinja2, Flask’s built-in templating engine, which allows dynamic content to be embedded into web pages. All Q&A data is stored in a CSV file, which is processed on the server side to match user questions with the most relevant answers. This project demonstrates a practical application of lightweight AI techniques to deliver fast and helpful solutions for everyday pet-related concerns, making it a valuable tool especially for pet owners.</p>
-      <a href="https://github.com/emiliagtg/Petcare_Assist.git" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold">PROJECT</a>
-    </div>
-  </div>
+<!-- Fade-in Animation -->
+<style>
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.7s ease-in-out both;
+}
+</style>
 
 
-  <div class="flex flex-col md:flex-row items-center bg-[#0f172a] rounded-xl shadow-lg p-6 mb-10 gap-6 text-white">
-    <img src="img/medicence.png" alt="Fraud Detection" class="w-full md:w-1/2 rounded-lg object-cover h-56" />
-    <div class="md:w-1/2">
-      <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">MediAI Assist</h3>
-      <p class="text-sm mb-4">Medisense is an AI-powered web application designed to classify skin diseases based on user-uploaded images. The project aims to provide an early detection tool for various skin conditions by utilizing a deep learning model trained on real-world dermatological datasets. The backend of the application is developed using Python and the Flask framework, which handles server-side logic, image processing, and integration with the trained AI model. The image classification model is built using TensorFlow and Keras, and is saved in .h5 format for easy deployment. On the frontend, HTML, CSS, and JavaScript are used to build a responsive and user-friendly interface. Users can upload images of skin conditions, and the system returns a predicted diagnosis based on the AI model’s output. This project demonstrates a practical implementation of artificial intelligence in the healthcare domain, aiming to provide users with fast, accessible, and educational insights into their skin health.</p>
-      <a href="https://github.com/emiliagtg/medisense.git" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold">PROJECT</a>
-    </div>
-  </div>
-
-
-  <div class="flex flex-col md:flex-row items-center bg-[#0f172a] rounded-xl shadow-lg p-6 mb-10 gap-6 text-white">
-    <img src="img/presidentenroll.jpeg" alt="Fraud Detection" class="w-full md:w-1/2 rounded-lg object-cover h-56" />
-    <div class="md:w-1/2">
-      <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Presu Enrollment</h3>
-      <p class="text-sm mb-4">President University Enrollment is a digital application designed to simplify the course enrollment process for university students. Users are required to log in or register an account before accessing the main features. Once logged in, they are directed to the homepage, which provides two main options: course selection and viewing the enrollment summary. The application features a dark theme with a minimalist and intuitive design, allowing users to navigate between features easily and efficiently.
-
-The application is developed using the JavaScript programming language with a modular approach, making the code easier to manage and organize. Throughout its development, several important programming concepts are applied, such as Object-Oriented Programming (OOP) for managing data and object structures, recursive functions for handling mathematical operations like factorial and Fibonacci sequences, and unit testing to ensure each function operates correctly and reliably. This combination of concepts ensures that the application not only performs well in terms of user interface but is also robust in terms of logic and code structure.</p>
-      <a href="https://github.com/emiliagtg/finalwmp.git" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold">PROJECT</a>
-    </div>
-  </div>
-
-</section>
 
 <section id="certificates" class="px-6 py-12">
    <h2 class="text-3xl font-semibold mb-6 text-center">
   <span class="text-white">Certifi</span><span class="text-[#6fa7ce]">cations</span>
 </h2>
-
 <div class="relative w-full max-w-2xl mx-auto overflow-hidden rounded-2xl bg-slate-800 shadow-lg">
-  <!-- Certificate Images Wrapper -->
   <div id="certSlider" class="flex transition-transform duration-500">
     <img src="img/certificate_dicoding_java.jpeg" class="w-full object-contain" alt="Certificate 1" />
     <img src="img/dicertificate_dicoding_AIPraktis.jpg" class="w-full object-contain" alt="Certificate 2" />
@@ -210,22 +293,18 @@ The application is developed using the JavaScript programming language with a mo
     <img src="img/certificate_digitalent.jpg" class="w-full object-contain" alt="Certificate 6" />
   </div>
 
-  <!-- Left Arrow -->
   <button onclick="prevCert()" class="absolute top-1/2 left-4 -translate-y-1/2 text-white text-3xl bg-black bg-opacity-30 hover:bg-opacity-50 p-2 rounded-full z-10">
     &#10094;
   </button>
-
-  <!-- Right Arrow -->
   <button onclick="nextCert()" class="absolute top-1/2 right-4 -translate-y-1/2 text-white text-3xl bg-black bg-opacity-30 hover:bg-opacity-50 p-2 rounded-full z-10">
     &#10095;
   </button>
 </div>
 
-      <div class="cert-dots text-center mt-4" id="certDots"></div>
+ <div class="cert-dots text-center mt-4" id="certDots"></div>
     </div>
   </section>
-
-  <section id="contact" class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-10">
+ <section id="contact" class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between gap-10">
     <div class="flex-1 text-white">
       <h2 class="text-3xl font-semibold mb-5 section-title">
   <span class="text-[#6fa7ce]">Contact</span> <span class="text-white">Me</span>
@@ -276,10 +355,7 @@ The application is developed using the JavaScript programming language with a mo
     </span>
   </div>
 
-  <!--  script -->
   <script src="js/script.js"></script>
-
-  <!-- EmailJS -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function() {
@@ -298,7 +374,6 @@ The application is developed using the JavaScript programming language with a mo
     });
   </script>
 
-  <!-- Star background animation -->
   <script>
     const canvas = document.getElementById("star-canvas");
     const ctx = canvas.getContext("2d");
@@ -350,7 +425,6 @@ The application is developed using the JavaScript programming language with a mo
     }
     animate();
   </script>
-  <!-- Enhanced AI Avatar Assistant Style -->
   <style>
     @keyframes wave {
       0% { transform: rotate(0deg); }
@@ -414,7 +488,6 @@ The application is developed using the JavaScript programming language with a mo
 
 <body>
 
-  <!-- Enhanced AI Avatar Assistant -->
   <div id="ai-avatar-assistant" style="position: fixed; bottom: 7rem; left: 2rem; z-index: 40;" class="assistant-in">
  <div class="relative sparkle">
      
@@ -594,6 +667,45 @@ The application is developed using the JavaScript programming language with a mo
 <button id="scrollToTopBtn" class="fixed bottom-6 right-6 bg-[#6fa7ce] p-3 rounded-full shadow-lg hover:bg-[#5a94c0] transition">
   <i class="fas fa-arrow-up text-white hover:scale-110 transition duration-300"></i>
 </button>
+<style>
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+<script>
+  const slider = document.getElementById("certSlider");
+  const certImages = slider.querySelectorAll("img");
+  let currentIndex = 0;
+
+  function updateSliderPosition() {
+    const imageWidth = certImages[0].clientWidth;
+    slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+  }
+
+  function prevCert() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSliderPosition();
+    }
+  }
+
+  function nextCert() {
+    if (currentIndex < certImages.length - 1) {
+      currentIndex++;
+      updateSliderPosition();
+    }
+  }
+
+  // Optional: Responsive adjustment on window resize
+  window.addEventListener('resize', updateSliderPosition);
+</script>
 
 </body>
 </html>

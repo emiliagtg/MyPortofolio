@@ -405,10 +405,27 @@ button[type="submit"]:hover {
 }
 
 /* Skill Icon Color Override */
-.bg-js, .bg-html, .bg-css, .bg-php, .bg-python, .bg-java, .bg-cpp,
-.bg-androids, .bg-vscode, .bg-laravel, .bg-sql, .bg-github {
-  background-color: #ffffff !important;
+.skill-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
+
+.skill-item:hover,
+.skill-item.active {
+  transform: scale(1.1);
+  box-shadow: 0 0 18px 6px rgba(111, 167, 206, 0.6);
+  background-color: #e6f6ff;
+}
+
 
 /* CERTIFICATE SLIDER */
 .cert-slider {

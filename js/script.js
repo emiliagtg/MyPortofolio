@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ------------------------
-  // CERTIFICATE MODAL (POPUP)
-  // ------------------------
   const certImages = [
     'img/certificate_dicoding_java.jpeg',
     'img/dicertificate_dicoding_AIPraktis.jpg',
@@ -32,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     certModal.classList.remove('show');
   }
 
-  function nextCert() {
+  function nextCertModal() {
     currentCertIndex = (currentCertIndex + 1) % certImages.length;
     updateCertModal();
   }
 
-  function prevCert() {
+  function prevCertModal() {
     currentCertIndex = (currentCertIndex - 1 + certImages.length) % certImages.length;
     updateCertModal();
   }
@@ -45,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.openCertModal = openCertModal;
 
   if (nextCertBtn && prevCertBtn && closeCertModal) {
-    nextCertBtn.addEventListener('click', nextCert);
-    prevCertBtn.addEventListener('click', prevCert);
+    nextCertBtn.addEventListener('click', nextCertModal);
+    prevCertBtn.addEventListener('click', prevCertModal);
     closeCertModal.addEventListener('click', closeModalCert);
   }
 
@@ -54,9 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === certModal) closeModalCert();
   });
 
-  // ------------------------
-  // SCROLL ANIMATIONS
-  // ------------------------
+  // Scroll animations
   const observerOptions = { threshold: 0.1 };
 
   const activeObserver = new IntersectionObserver((entries) => {
@@ -83,44 +78,39 @@ document.addEventListener('DOMContentLoaded', () => {
     showObserver.observe(item);
   });
 
-  // ------------------------
-  // TYPING TEXT EFFECT
-  // ------------------------
+  // Typing text effect
   const phrases = [
-  '<span style="color:#6fa7ce;">I am an Information Technology Student</span>', // sky-400
-  '<span style="color:#6fa7ce;">I specialize in Artificial Intelligence</span>'  // pink-400
-];
+    '<span style="color:#6fa7ce;">I am an Information Technology Student</span>',
+    '<span style="color:#6fa7ce;">I specialize in Artificial Intelligence</span>'
+  ];
 
-const typedText = document.getElementById("typed-text");
-let phraseIndex = 0, charIndex = 0, isDeleting = false;
+  const typedText = document.getElementById("typed-text");
+  let phraseIndex = 0, charIndex = 0, isDeleting = false;
 
-function typeEffect() {
-  const current = phrases[phraseIndex];
-  const cleanText = current.replace(/<[^>]*>?/gm, ''); // Strip tags to count only text
+  function typeEffect() {
+    const current = phrases[phraseIndex];
+    const cleanText = current.replace(/<[^>]*>?/gm, '');
 
-  const visible = isDeleting
-    ? cleanText.substring(0, charIndex--)
-    : cleanText.substring(0, charIndex++);
+    const visible = isDeleting
+      ? cleanText.substring(0, charIndex--)
+      : cleanText.substring(0, charIndex++);
 
-  const visibleHTML = current.replace(cleanText, visible);
+    const visibleHTML = current.replace(cleanText, visible);
+    typedText.innerHTML = visibleHTML;
 
-  typedText.innerHTML = visibleHTML;
+    if (!isDeleting && charIndex === cleanText.length) {
+      setTimeout(() => isDeleting = true, 2000);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
 
-  if (!isDeleting && charIndex === cleanText.length) {
-    setTimeout(() => isDeleting = true, 2000);
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
+    setTimeout(typeEffect, isDeleting ? 40 : 100);
   }
 
-  setTimeout(typeEffect, isDeleting ? 40 : 100);
-}
+  if (typedText) typeEffect();
 
-if (typedText) typeEffect();
-
-  // ------------------------
-  // SCROLL TO TOP BUTTON
-  // ------------------------
+  // Scroll to top button
   const scrollBtn = document.createElement('button');
   scrollBtn.id = 'scrollToTop';
   scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
@@ -135,11 +125,8 @@ if (typedText) typeEffect();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // ------------------------
-  // CONTACT FORM + EMAILJS
-  // ------------------------
+  // Contact form with emailjs
   emailjs.init("0mqWwG4ZnyNkJFqOc");
-
   const form = document.querySelector("form");
 
   function showToast(message) {
@@ -155,13 +142,11 @@ if (typedText) typeEffect();
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
       const email = this.email.value;
       if (!email.includes("@") || !email.includes(".")) {
         showToast("❗ Please enter a valid email address");
         return;
       }
-
       showToast("⏳ Sending message...");
 
       emailjs.sendForm("service_2d9ue3k", "template_fjizopm", this)
@@ -175,9 +160,7 @@ if (typedText) typeEffect();
     });
   }
 
-  // ------------------------
-  // SKILL ITEM ANIMATION
-  // ------------------------
+  // Skill item animation
   const skillItems = document.querySelectorAll(".skill-item");
   skillItems.forEach((item, index) => {
     setTimeout(() => item.classList.add("show"), index * 150);
@@ -187,33 +170,30 @@ if (typedText) typeEffect();
     });
   });
 
-  // ==== CERTIFICATE SLIDER (HORIZONTAL) ====
-dotsContainer.innerHTML = '';
+  // Certificate slider
+  const slides = document.querySelectorAll('.cert-slide');
+  const dotsContainer = document.querySelector('.cert-dots');
+  let current = 0;
 
-const maxDots = 6;
-for (let i = 0; i < Math.min(slides.length, maxDots); i++) {
-  const dot = document.createElement('span');
-  dot.addEventListener('click', () => showSlide(current = i));
-  dotsContainer?.appendChild(dot);
-}
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      if (dotsContainer.children[i]) {
+        dotsContainer.children[i].classList.toggle('active', i === index);
+      }
+    });
+  }
 
+  dotsContainer.innerHTML = '';
+  slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.addEventListener('click', () => showSlide(current = i));
+    dotsContainer.appendChild(dot);
+  });
 
-// ❗ Hapus semua dots lama sebelum buat baru
-dotsContainer.innerHTML = '';
-
-slides.forEach((_, i) => {
-  const dot = document.createElement('span');
-  dot.addEventListener('click', () => showSlide(current = i));
-  dotsContainer?.appendChild(dot);
+  showSlide(current);
 });
 
-showSlide(current);
-
-});
-
-// ------------------------
-// SPEECH FUNCTION & MENU TOGGLE
-// ------------------------
 function speak(text) {
   if ('speechSynthesis' in window) {
     const speech = new SpeechSynthesisUtterance(text);
@@ -230,25 +210,4 @@ function speak(text) {
 
 function toggleMenu() {
   document.querySelector('.nav-links')?.classList.toggle('active');
-}
-let currentIndex = 0;
-
-function updateSlider() {
-  const slider = document.getElementById('certSlider');
-  const certs = slider.children.length;
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-function nextCert() {
-  const slider = document.getElementById('certSlider');
-  const certs = slider.children.length;
-  currentIndex = (currentIndex + 1) % certs;
-  updateSlider();
-}
-
-function prevCert() {
-  const slider = document.getElementById('certSlider');
-  const certs = slider.children.length;
-  currentIndex = (currentIndex - 1 + certs) % certs;
-  updateSlider();
 }
