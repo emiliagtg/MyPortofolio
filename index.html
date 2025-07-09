@@ -12,26 +12,39 @@
   <canvas id="star-canvas"></canvas>
 
   <nav class="bg-slate-900 border-b border-slate-700">
-  <div class="container mx-auto px-6 py-3">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-      
-      <!-- Nama Kiri -->
-      <div class="text-lg text-white font-bold mb-3 md:mb-0 text-left">
-        Emilia Ginting
-      </div>
+  <div class="max-w-7xl mx-auto px-6 py-3">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-lg text-white font-bold">Emilia Ginting</div>
 
-      <!-- Menu Kanan -->
-      <ul class="grid grid-cols-3 gap-x-6 gap-y-2 text-sm text-white text-center md:flex md:space-x-6 md:text-left md:justify-end">
-        <li><a href="#home" class="nav-link hover:text-white">Home</a></li>
-        <li><a href="#about" class="nav-link hover:text-white">About Me</a></li>
-        <li><a href="#skills" class="nav-link hover:text-white">Skill</a></li>
-        <li><a href="#projects" class="nav-link hover:text-white">Project</a></li>
-        <li><a href="#certificates" class="nav-link hover:text-white">Certification</a></li>
-        <li><a href="#contact" class="nav-link hover:text-white">Contact</a></li>
+      <!-- Hamburger Button (Mobile Only) -->
+      <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+        &#9776;
+      </button>
+
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex space-x-6 text-sm text-white items-center">
+        <li><a href="#home" class="nav-link hover:text-gray-300">Home</a></li>
+        <li><a href="#about" class="nav-link hover:text-gray-300">About Me</a></li>
+        <li><a href="#skills" class="nav-link hover:text-gray-300">Skill</a></li>
+        <li><a href="#projects" class="nav-link hover:text-gray-300">Project</a></li>
+        <li><a href="#certificates" class="nav-link hover:text-gray-300">Certification</a></li>
+        <li><a href="#contact" class="nav-link hover:text-gray-300">Contact</a></li>
       </ul>
     </div>
+
+    <!-- Menu Mobile -->
+    <ul id="mobile-menu" class="md:hidden mt-4 hidden flex-col space-y-2 text-sm text-white">
+      <li><a href="#home" class="nav-link hover:text-gray-300">Home</a></li>
+      <li><a href="#about" class="nav-link hover:text-gray-300">About Me</a></li>
+      <li><a href="#skills" class="nav-link hover:text-gray-300">Skill</a></li>
+      <li><a href="#projects" class="nav-link hover:text-gray-300">Project</a></li>
+      <li><a href="#certificates" class="nav-link hover:text-gray-300">Certification</a></li>
+      <li><a href="#contact" class="nav-link hover:text-gray-300">Contact</a></li>
+    </ul>
   </div>
 </nav>
+
 
 <header id="home" class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
     <div class="flex-1 text-left">
@@ -78,245 +91,164 @@ Outside of coding, I have a strong interest in the intersections between technol
     <span class="text-white">Skill </span><span class="text-[#6fa7ce]">& Tools</span>
   </h2>
 
-  <!-- flex wrapper: kanan di HP, tengah di desktop -->
-  <div class="flex justify-start md:justify-center">
-  <div
-    id="skills-grid"
-    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 ml-4 md:ml-0">
-      <!-- ICON ITEM TEMPLATE -->
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-cyan-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-cyan-400 animate-fade-in"
-        >
-          <img src="img/logo_javascript.png" class="w-16 h-16 mx-auto" alt="JavaScript" />
-        </div>
-      </div>
+<!-- Grid Skill -->
 
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-orange-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-orange-400 animate-fade-in"
-        >
-          <img src="img/logo_html.png" class="w-16 h-16 mx-auto" alt="HTML" />
-        </div>
-      </div>
+<div class="flex justify-start md:justify-center">
+  <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 ml-4 md:ml-0">
 
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-blue-400 animate-fade-in"
-        >
-          <img src="img/logo_css.png" class="w-16 h-16 mx-auto" alt="CSS" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-indigo-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-indigo-400 animate-fade-in"
-        >
-          <img src="img/logo_php.png" class="w-16 h-16 mx-auto" alt="PHP" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-yellow-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-yellow-400 animate-fade-in"
-        >
-          <img src="img/Python.png" class="w-16 h-16 mx-auto" alt="Python" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-orange-300/40 hover:shadow-2xl border border-gray-200 group-hover:border-orange-300 animate-fade-in"
-        >
-          <img src="img/Java.png" class="w-16 h-16 mx-auto" alt="Java" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-500/40 hover:shadow-2xl border border-gray-200 group-hover:border-blue-500 animate-fade-in"
-        >
-          <img src="img/ISO_C++_Logo.svg.png" class="w-16 h-16 mx-auto" alt="C++" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-sky-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-sky-400 animate-fade-in"
-        >
-          <img src="img/logo_sql.png" class="w-16 h-16 mx-auto" alt="MySQL" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-red-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-red-400 animate-fade-in"
-        >
-          <img src="img/Laravel.svg.png" class="w-16 h-16 mx-auto" alt="Laravel" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-green-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-green-400 animate-fade-in"
-        >
-          <img src="img/logo_androids.png" class="w-16 h-16 mx-auto" alt="Android Studio" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-blue-400 animate-fade-in"
-        >
-          <img src="img/vscode-logo.png.webp" class="w-16 h-16 mx-auto" alt="VSCode" />
-        </div>
-      </div>
-
-      <div class="skill-item group">
-        <div
-          class="bg-white rounded-xl p-4 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-purple-400/40 hover:shadow-2xl border border-gray-200 group-hover:border-purple-400 animate-fade-in"
-        >
-          <img src="img/logo_github.svg" class="w-16 h-16 mx-auto" alt="GitHub" />
-        </div>
-      </div>
+    <!-- JavaScript -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-cyan-400 pulse-cyan">
+      <img src="img/logo_javascript.png" class="w-16 h-16 mx-auto" alt="JavaScript" />
     </div>
-  </div>
-</section>
 
-</section><section id="projects" class="container mx-auto px-6 py-14">
+    <!-- HTML -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-orange-400 pulse-orange">
+      <img src="img/logo_html.png" class="w-16 h-16 mx-auto" alt="HTML" />
+    </div>
+
+    <!-- CSS -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-blue-400 pulse-blue">
+      <img src="img/logo_css.png" class="w-16 h-16 mx-auto" alt="CSS" />
+    </div>
+
+    <!-- PHP -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-indigo-400 pulse-indigo">
+      <img src="img/logo_php.png" class="w-16 h-16 mx-auto" alt="PHP" />
+    </div>
+
+    <!-- Python -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-yellow-400 pulse-yellow">
+      <img src="img/Python.png" class="w-16 h-16 mx-auto" alt="Python" />
+    </div>
+
+    <!-- Java -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-orange-300 pulse-orange2">
+      <img src="img/Java.png" class="w-16 h-16 mx-auto" alt="Java" />
+    </div>
+
+    <!-- C++ -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-blue-500 pulse-blue">
+      <img src="img/ISO_C++_Logo.svg.png" class="w-16 h-16 mx-auto" alt="C++" />
+    </div>
+
+    <!-- MySQL -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-sky-400 pulse-sky">
+      <img src="img/logo_sql.png" class="w-16 h-16 mx-auto" alt="MySQL" />
+    </div>
+
+    <!-- Laravel -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-red-400 pulse-red">
+      <img src="img/Laravel.svg.png" class="w-16 h-16 mx-auto" alt="Laravel" />
+    </div>
+
+    <!-- Android Studio -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-green-400 pulse-green">
+      <img src="img/logo_androids.png" class="w-16 h-16 mx-auto" alt="Android Studio" />
+    </div>
+
+    <!-- VSCode -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-blue-400 pulse-blue">
+      <img src="img/vscode-logo.png.webp" class="w-16 h-16 mx-auto" alt="VSCode" />
+    </div>
+
+    <!-- GitHub -->
+    <div class="bg-black rounded-xl p-4 transition-all duration-300 transform hover:scale-105 border border-gray-200 group-hover:border-purple-400 pulse-purple">
+      <img src="img/logo_github.svg" class="w-16 h-16 mx-auto" alt="GitHub" />
+    </div>
+
+  </div>
+</div>
+
+<section id="projects" class="container mx-auto px-6 py-14">
   <h2 class="text-3xl font-semibold text-center mb-12 text-[#6fa7ce]">
     Latest <span class="text-white">Projects</span>
   </h2>
-
   <div class="space-y-12">
-    <!-- PROJECT CARD -->
-    <div
-      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500"
-    >
+    
+    <!-- Repeat for each project -->
+    <!-- Project 1 -->
+    <div class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500">
       <div class="md:w-1/2">
-        <img src="img/fdd.png" alt="Fraud Detection"
-          class="w-full h-64 object-cover rounded-xl shadow-md" />
+        <img src="img/fdd.png" alt="Fraud Detection" class="w-full h-64 object-cover rounded-xl shadow-md" />
       </div>
       <div class="md:w-1/2 flex flex-col justify-center">
         <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Creditcard Fraud Detection</h3>
-        <p class="text-sm mb-4 leading-relaxed">
-          This project aims to develop a fraud detection system for credit card transactions using machine learning methods. 
-          The system is designed to automatically identify suspicious or unusual transactions, helping financial institutions prevent losses caused by fraudulent activities.
-          By utilizing historical transaction data, the model is trained to recognize patterns commonly found in normal transactions and detect anomalies that may indicate potential fraud.
-          This project utilizes several algorithms, such as Autoencoder (for anomaly detection), Random Forest, and Isolation Forest (for classification and outlier detection). 
-          Each model's performance is analyzed to determine the most effective approach for detecting fraud. 
-          The project also saves the trained models along with their preprocessing steps, enabling reuse in production systems. 
-          Additionally, it includes the option of packaging the system using Docker for efficient and consistent deployment.
-        </p>
+        <p class="text-sm mb-4 leading-relaxed">This project aims to develop a fraud detection system for credit card transactions using machine learning methods. The system is designed to automatically identify suspicious or unusual transactions, helping financial institutions prevent losses caused by fraudulent activities. By utilizing historical transaction data, the model is trained to recognize patterns commonly found in normal transactions and detect anomalies that may indicate potential fraud. This project utilizes several algorithms, such as Autoencoder (for anomaly detection), Random Forest, and Isolation Forest (for classification and outlier detection). Each model's performance is analyzed to determine the most effective approach for detecting fraud. The project also saves the trained models along with their preprocessing steps, enabling reuse in production systems. Additionally, it includes the option of packaging the system using Docker for efficient and consistent deployment.</p>
         <a href="https://github.com/emiliagtg/creditcard-fraud-detection" target="_blank"
-         style="border: 1px solid #22d3ee;"
-   class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit">
-   PROJECT
-</a>
+           style="border: 1px solid #22d3ee;"
+           class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit animate-glow">
+          PROJECT
+        </a>
       </div>
     </div>
 
-    <!-- PROJECT 2 -->
-    <div
-      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500"
-    >
+    <!-- Project 2 -->
+    <div class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500">
       <div class="md:w-1/2">
-        <img src="img/pet.png" alt="Petcare Assistant"
-          class="w-full h-64 object-cover rounded-xl shadow-md" />
+        <img src="img/pet.png" alt="Petcare Assistant" class="w-full h-64 object-cover rounded-xl shadow-md" />
       </div>
       <div class="md:w-1/2 flex flex-col justify-center">
         <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Petcare Asst</h3>
-        <p class="text-sm mb-4 leading-relaxed">
-          PetCare Q&A Web App is a web-based application designed to provide automatic answers to common questions about pet care, specifically for cats and dogs. 
-          The app allows users to ask questions related to their pets and instantly receive responses based on a pre-defined dataset of question-answer pairs. 
-          The system is developed using Python, with the Flask framework handling backend operations such as routing, question matching logic, and data integration. 
-          For the user interface, HTML and CSS are used to structure and style the layout, while JavaScript enables dynamic user interactions like sending and receiving messages on the chat page. 
-          The HTML templates are rendered using Jinja2, Flask’s built-in templating engine, which allows dynamic content to be embedded into web pages. 
-          All Q&A data is stored in a CSV file, which is processed on the server side to match user questions with the most relevant answers. 
-        </p>
+        <p class="text-sm mb-4 leading-relaxed">PetCare Q&A Web App is a web-based application designed to provide automatic answers to common questions about pet care, specifically for cats and dogs. The app allows users to ask questions related to their pets and instantly receive responses based on a pre-defined dataset of question-answer pairs. The system is developed using Python, with the Flask framework handling backend operations such as routing, question matching logic, and data integration. For the user interface, HTML and CSS are used to structure and style the layout, while JavaScript enables dynamic user interactions like sending and receiving messages on the chat page. The HTML templates are rendered using Jinja2, Flask’s built-in templating engine, which allows dynamic content to be embedded into web pages. All Q&A data is stored in a CSV file, which is processed on the server side to match user questions with the most relevant answers.</p>
         <a href="https://github.com/emiliagtg/Petcare_Assist.git" target="_blank"
-         style="border: 1px solid #22d3ee;"
-   class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit">
-   PROJECT
-</a>
+           style="border: 1px solid #22d3ee;"
+           class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit animate-glow">
+          PROJECT
+        </a>
       </div>
     </div>
 
-    <!-- PROJECT 3 -->
-    <div
-      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500"
-    >
+    <!-- Project 3 -->
+    <div class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500">
       <div class="md:w-1/2">
-        <img src="img/medicence.png" alt="MediAI Assist"
-          class="w-full h-64 object-cover rounded-xl shadow-md" />
+        <img src="img/medicence.png" alt="MediAI Assist" class="w-full h-64 object-cover rounded-xl shadow-md" />
       </div>
       <div class="md:w-1/2 flex flex-col justify-center">
         <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">MediAI Assist</h3>
-        <p class="text-sm mb-4 leading-relaxed">
-          Medisense is an AI-powered web application designed to classify skin diseases based on user-uploaded images. 
-          The project aims to provide an early detection tool for various skin conditions by utilizing a deep learning model trained on real-world dermatological datasets. 
-          The backend of the application is developed using Python and the Flask framework, which handles server-side logic, image processing, and integration with the trained AI model. 
-          The image classification model is built using TensorFlow and Keras, and is saved in .h5 format for easy deployment. 
-          Users can upload images of skin conditions, and the system returns a predicted diagnosis based on the AI model’s output.
-        </p>
+        <p class="text-sm mb-4 leading-relaxed">Medisense is an AI-powered web application designed to classify skin diseases based on user-uploaded images. The project aims to provide an early detection tool for various skin conditions by utilizing a deep learning model trained on real-world dermatological datasets. The backend of the application is developed using Python and the Flask framework, which handles server-side logic, image processing, and integration with the trained AI model. The image classification model is built using TensorFlow and Keras, and is saved in .h5 format for easy deployment. Users can upload images of skin conditions, and the system returns a predicted diagnosis based on the AI model’s output.</p>
         <a href="https://github.com/emiliagtg/medisense.git" target="_blank"
-        style="border: 1px solid #22d3ee;"
-   class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit">
-   PROJECT
-</a>
+           style="border: 1px solid #22d3ee;"
+           class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit animate-glow">
+          PROJECT
+        </a>
       </div>
     </div>
 
-    <!-- PROJECT 4 -->
-    <div
-      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500"
->
+    <!-- Project 4 -->
+    <div class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500">
       <div class="md:w-1/2">
-        <img src="img/imageprocessing.jpeg" alt="MediAI Assist"
-          class="w-full h-64 object-cover rounded-xl shadow-md" />
+        <img src="img/imageprocessing.jpeg" alt="Image Processing" class="w-full h-64 object-cover rounded-xl shadow-md" />
       </div>
       <div class="md:w-1/2 flex flex-col justify-center">
         <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Image Processing</h3>
-        <p class="text-sm mb-4 leading-relaxed">
-         This project is a digital image processing collection built using the Python programming language. It consists of multiple Python scripts, each designed to perform a specific image processing task such as adjusting brightness and RGB levels, applying bitwise operations (AND, OR, NOT), adding borders, blending two images, and extracting object boundaries. Each function is implemented in a separate file and can be executed individually.
-
-         The skills applied in this project include Python programming, a solid understanding of digital image processing, and the use of specialized libraries like OpenCV. The main tools used are Python 3.x, the OpenCV library for handling image operations, and a code editor such as Visual Studio Code to write and run the scripts. 
-        </p>
+        <p class="text-sm mb-4 leading-relaxed">This project is a digital image processing collection built using the Python programming language. It consists of multiple Python scripts, each designed to perform a specific image processing task such as adjusting brightness and RGB levels, applying bitwise operations (AND, OR, NOT), adding borders, blending two images, and extracting object boundaries. Each function is implemented in a separate file and can be executed individually.The skills applied in this project include Python programming, a solid understanding of digital image processing, and the use of specialized libraries like OpenCV. The main tools used are Python 3.x, the OpenCV library for handling image operations, and a code editor such as Visual Studio Code to write and run the scripts.</p>
         <a href="https://github.com/emiliagtg/imageprocessingproject.git" target="_blank"
-   style="border: 1px solid #22d3ee;"
-   class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit">
-   PROJECT
-</a>
-
+           style="border: 1px solid #22d3ee;"
+           class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit animate-glow">
+          PROJECT
+        </a>
       </div>
     </div>
 
-
-    <!-- PROJECT 5 -->
-    <div
-      class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500">
+    <!-- Project 5 -->
+    <div class="group flex flex-col md:flex-row items-center bg-[#0f172a] border border-cyan-500/20 rounded-2xl p-6 gap-6 text-white transition duration-300 ease-in-out shadow-xl hover:shadow-cyan-400/30 hover:ring-2 hover:ring-cyan-300 hover:scale-[1.015] animate-fade-in active:ring-4 active:ring-cyan-500">
       <div class="md:w-1/2">
-        <img src="img/presidentenroll.jpeg" alt="Presu Enrollment"
-          class="w-full h-64 object-cover rounded-xl shadow-md" />
+        <img src="img/presidentenroll.jpeg" alt="Presu Enrollment" class="w-full h-64 object-cover rounded-xl shadow-md" />
       </div>
       <div class="md:w-1/2 flex flex-col justify-center">
         <h3 class="text-xl font-semibold text-[#6fa7ce] mb-2">Presu Enrollment</h3>
-        <p class="text-sm mb-4 leading-relaxed">
-          President University Enrollment is a digital application designed to simplify the course enrollment process for university students. 
-          Users are required to log in or register an account before accessing the main features. Once logged in, they are directed to the homepage, which provides two main options: course selection and viewing the enrollment summary. 
-          The application features a dark theme with a minimalist and intuitive design.
-          The application is developed using JavaScript with a modular approach, and applies concepts like OOP, recursion, and unit testing to ensure robustness and maintainability.
-        </p>
+        <p class="text-sm mb-4 leading-relaxed">President University Enrollment is a digital application designed to simplify the course enrollment process for university students. Users are required to log in or register an account before accessing the main features. Once logged in, they are directed to the homepage, which provides two main options: course selection and viewing the enrollment summary. The application features a dark theme with a minimalist and intuitive design.The application is developed using JavaScript with a modular approach, and applies concepts like OOP, recursion, and unit testing to ensure robustness and maintainability.</p>
         <a href="https://github.com/emiliagtg/finalwmp.git" target="_blank"
-        style="border: 1px solid #22d3ee;"
-   class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit">
-   PROJECT
-</a>
+           style="border: 1px solid #22d3ee;"
+           class="mt-4 mx-auto flex justify-center items-center text-cyan-400 hover:bg-[#6fa7ce] hover:text-black px-4 py-2 rounded-md text-sm font-semibold transition w-fit animate-glow">
+          PROJECT
+        </a>
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- Fade-in Animation -->
 <style>
 @keyframes fade-in {
   0% {
@@ -332,7 +264,6 @@ Outside of coding, I have a strong interest in the intersections between technol
   animation: fade-in 0.7s ease-in-out both;
 }
 </style>
-
 
 
 <section id="certificates" class="px-6 py-12">
@@ -760,8 +691,70 @@ Outside of coding, I have a strong interest in the intersections between technol
     }
   }
 
-  // Optional: Responsive adjustment on window resize
   window.addEventListener('resize', updateSliderPosition);
+</script>
+<style>
+  @keyframes pulseColor {
+    0%, 100% { box-shadow: 0 0 12px var(--glow); }
+    50% { box-shadow: 0 0 25px var(--glow-strong); }
+  }
+
+  .pulse-cyan     { --glow: rgba(0,255,255,0.4); --glow-strong: rgba(0,255,255,0.9); animation: pulseColor 2s infinite; }
+  .pulse-orange   { --glow: rgba(255,102,0,0.4); --glow-strong: rgba(255,102,0,0.9); animation: pulseColor 2s infinite; }
+  .pulse-blue     { --glow: rgba(0,102,255,0.4); --glow-strong: rgba(0,102,255,0.9); animation: pulseColor 2s infinite; }
+  .pulse-indigo   { --glow: rgba(75,0,130,0.4); --glow-strong: rgba(75,0,130,0.9); animation: pulseColor 2s infinite; }
+  .pulse-yellow   { --glow: rgba(255,204,0,0.4); --glow-strong: rgba(255,204,0,0.9); animation: pulseColor 2s infinite; }
+  .pulse-orange2  { --glow: rgba(255,140,0,0.4); --glow-strong: rgba(255,140,0,0.9); animation: pulseColor 2s infinite; }
+  .pulse-sky      { --glow: rgba(0,191,255,0.4); --glow-strong: rgba(0,191,255,0.9); animation: pulseColor 2s infinite; }
+  .pulse-red      { --glow: rgba(255,0,0,0.4); --glow-strong: rgba(255,0,0,0.9); animation: pulseColor 2s infinite; }
+  .pulse-green    { --glow: rgba(0,200,100,0.4); --glow-strong: rgba(0,200,100,0.9); animation: pulseColor 2s infinite; }
+  .pulse-purple   { --glow: rgba(153,50,204,0.4); --glow-strong: rgba(153,50,204,0.9); animation: pulseColor 2s infinite; }
+</style>
+
+<style>
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.7s ease-in-out both;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.2), 0 0 20px rgba(34, 211, 238, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.7), 0 0 40px rgba(34, 211, 238, 0.6);
+  }
+}
+
+.animate-glow {
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+.glow-button {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+}
+.glow-button:hover {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.9), 0 0 35px rgba(34, 211, 238, 0.7);
+  transform: scale(1.05);
+}
+</style>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 </script>
 
 </body>

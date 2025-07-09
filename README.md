@@ -1,42 +1,55 @@
-# My Portfolio
+# 💼 My Portfolio
 
-Welcome to my personal portfolio! 🎨✨
+Welcome to my personal portfolio website! 🎨✨  
+A responsive personal site to showcase my projects and skills — built using **HTML**, **CSS**, **JavaScript**, and containerized using **Docker** with **Nginx**.
 
-This is a personal website showcasing my projects and skills, built using **HTML**, **CSS**, and **JavaScript**, and containerized with **Docker** (using Nginx).
+---
 
 ## 🚀 Features
 
-- Profile and project showcase
-- Fully responsive design
-- Smooth animations
-- Easy to run locally or in a container
+- ✨ Clean and responsive UI
+- 📁 Projects and certifications gallery
+- 🧠 Skills overview
+- 💡 Built with modern frontend practices
+- 🐳 Docker support for easy deployment
 
-## 💻 Run Locally
+---
 
-To run locally without Docker, simply open the `index.html` file in your browser.
+## 💻 Run Locally (Without Docker)
+
+1. Clone or download this repo.
+2. Open `index.html` in your preferred browser.
+
+---
 
 ## 🐳 Run with Docker
 
-1️⃣ Build the image:
+1. Build the Docker image:
 
-```bash
-docker-compose build
-2️⃣ Start the container:
-docker-compose up
-3️⃣ Open your browser and visit:
-http://localhost:8080
+   ```bash
+   docker-compose build
 
-🗂 Project Structure
+ 2. Run the container: 
+ 
+    docker-compose up
 
+ 3. Open your browser and visit:
+
+     http://localhost:8080
+     
+📁 Project Structure
 MyPortofolio/
-├── index.html
-├── style/
-│   └── style.css
+├── .vscode/
+│   └── settings.json
+├── img/
+│   └── [images for certificates, projects, etc.]
 ├── js/
 │   └── script.js
-├── img/
-├── Dockerfile
+├── style/
+│   └── style.css
 ├── docker-compose.yaml
+├── Dockerfile
+├── index.html
 └── README.md
 
 ✨ Technologies Used
@@ -49,28 +62,6 @@ Nginx
 
 📬 Contact
 
-✉️ Email: [your email]
-🌐 Website: [your website any]
-💼 LinkedIn: [your LinkedIn link]
-
-Thank you checking out my portfolio ✨
-
---------------------------------------------------
-
-✅ To create and push this README.md, you can:
-
-1️⃣ Create the file (or copy-paste above text):
-
-```bash
-touch README.md
-
-2️⃣ Edit your editor and paste the content.
-
-3️⃣ Commit and push:
-
-git add README.md
-git commit -m "Add English README"
-git push
-
-
-Thank you checking out my portfolio ✨
+✉️ Email: [emiliaginting6@gmail.com]
+🌐 Website: [https://emiliaginting.netlify.app]
+💼 LinkedIn: [https://www.linkedin.com/in/emilia-adinda-putri-br-ginting-b7a33828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app]
